@@ -1,26 +1,18 @@
-import { navItems } from "./constants/navbar";
-
-import {
-  Navbar,
-  NavbarButton,
-  NavbarLogo,
-  NavBody,
-  NavItems,
-} from "@/components/Navbar";
-
 import { NextPage } from "next";
+
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 
 interface Props {}
 
 const Page: NextPage<Props> = ({}) => {
   return (
-    <Navbar>
-      <NavBody>
-        <NavbarLogo />
-        <NavItems items={navItems} />
-        <NavbarButton href="/login">Sign In</NavbarButton>
-      </NavBody>
-    </Navbar>
+    <>
+      <Navbar />
+      <Hero />
+      <Footer />
+    </>
   );
 };
 

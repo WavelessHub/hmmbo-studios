@@ -1,4 +1,9 @@
-const navItems = [
+interface NavbarItem {
+  name: string;
+  link: string;
+}
+
+const navbarItems: NavbarItem[] = [
   {
     name: "Home",
     link: "home",
@@ -17,4 +22,4 @@ const navItems = [
   },
 ];
 
-export { navItems };
+export { navbarItems, type NavbarItem };

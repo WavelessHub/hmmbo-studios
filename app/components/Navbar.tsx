@@ -2,16 +2,31 @@
 
 import { cn } from "@/lib/utils";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { NextPage } from "next";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
+import { navbarItems, type NavbarItem } from "@/app/constants/navbar";
 
-export const Navbar = ({
-  children,
-  className,
-}: {
+interface Props {}
+
+const Navbar: NextPage<Props> = ({}) => {
+  return (
+    <NavbarLayout>
+      <NavBody>
+        <NavbarLogo />
+        <NavbarItems items={navbarItems} />
+        <NavbarButton href="/login">Sign In</NavbarButton>
+      </NavBody>
+    </NavbarLayout>
+  );
+};
+
+interface NavbarLayoutProps {
   children: React.ReactNode;
   className?: string;
-}) => {
+}
+
+const NavbarLayout = ({ children, className }: NavbarLayoutProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll({ target: ref });
   const [visible, setVisible] = useState(false);
@@ -21,7 +36,12 @@ export const Navbar = ({
   return (
     <motion.div
       ref={ref}
-      className={cn("fixed inset-x-0 top-0 z-40 p-2", className)}
+      // animate={{ backdropFilter: visible ? "blur(10px)" : "none" }}
+      className={cn(
+        "fixed inset-x-0 z-40 bg-background",
+        // visible && "bg-background/50",
+        className
+      )}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -35,48 +55,37 @@ export const Navbar = ({
   );
 };
 
-export const NavBody = ({
-  children,
-  className,
-  visible,
-}: {
+interface NavbarBodyProps {
   children: React.ReactNode;
   className?: string;
-  visible?: boolean;
-}) => {
+}
+
+const NavBody = ({ children, className }: NavbarBodyProps) => {
   return (
-    <motion.div
-      animate={{
-        backdropFilter: visible ? "blur(10px)" : "none",
-        boxShadow: visible ? "0 8px 32px rgba(0,0,0,0.1)" : "none",
-        y: visible ? 20 : 0,
-      }}
-      transition={{ type: "spring", stiffness: 200, damping: 50 }}
+    <div
       className={cn(
-        "relative mx-auto hidden w-full max-w-7xl items-center justify-between rounded-full px-4 py-2 lg:flex",
-        visible && "bg-white/80 dark:bg-neutral-950/80",
+        "relative mx-auto hidden w-full max-w-7xl items-center justify-between p-4 lg:flex",
         className
       )}
     >
       {children}
-    </motion.div>
+    </div>
   );
 };
 
-export const NavItems = ({
-  items,
-  className,
-}: {
-  items: { name: string; link: string }[];
+interface NavbarItemProps {
+  items: NavbarItem[];
   className?: string;
-}) => {
+}
+
+const NavbarItems = ({ items, className }: NavbarItemProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "hidden lg:flex items-center space-x-2 text-sm font-medium",
+        "hidden lg:flex items-center space-x-2 text-[15px] font-medium",
         className
       )}
     >
@@ -90,7 +99,7 @@ export const NavItems = ({
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
-              className="absolute inset-0 rounded-full bg-neutral-800"
+              className="absolute inset-0 rounded-full bg-neutral-800/80"
             />
           )}
           <span className="relative z-10">{item.name}</span>
@@ -100,21 +109,19 @@ export const NavItems = ({
   );
 };
 
-export const NavbarLogo = () => (
+const NavbarLogo = () => (
   <Link href="/" className="text-3xl font-bold text-primary">
     <span className="text-secondary-gradient">H</span>S
   </Link>
 );
 
-export const NavbarButton = ({
-  href,
-  children,
-  className,
-}: {
+interface NavbarButtonProps {
   href: string;
   children: React.ReactNode;
   className?: string;
-}) => (
+}
+
+const NavbarButton = ({ href, children, className }: NavbarButtonProps) => (
   <Link
     href={href}
     className={cn(
@@ -125,3 +132,5 @@ export const NavbarButton = ({
     {children}
   </Link>
 );
+
+export default Navbar;
