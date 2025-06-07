@@ -1,30 +1,20 @@
 "use client";
 
-import { useAuth } from "@/app/hooks/useAuth";
-import { usePath } from "@/app/hooks/usePath";
+import { RegisterSchemaType } from "@/app/schemas/auth";
+import { useRegisterForm } from "@/app/hooks/useAuth";
+import { AuthForm } from "@/app/components/auth";
 
-import { Form } from "@/app/components/auth";
-
-import { FormEvent } from "react";
 import { NextPage } from "next";
 
 interface Props {}
 
 const RegisterPage: NextPage<Props> = ({}) => {
-  const { userData, setUserData } = useAuth();
-  const { router } = usePath();
-
-  const handleRegister = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    console.log("Account Registration:", userData);
-    router.push(`verify?email=${userData.email}`);
+  const onSubmit = (data: RegisterSchemaType) => {
+    console.log("Register:", data);
   };
 
   return (
-    <form onSubmit={handleRegister}>
-      <Form userData={userData} setUserData={setUserData} />
-    </form>
+    <AuthForm mode="register" form={useRegisterForm()} onSubmit={onSubmit} />
   );
 };
 

@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { DefaultValues, useForm, UseFormReturn } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z, ZodType } from "zod";
 
-export interface UserData {
-  email: string;
-  password: string;
-  confirmPassword?: string;
-}
+import { loginSchema, registerSchema } from "@/app/schemas/auth";
 
-export const useAuth = () => {
-  const [userData, setUserData] = useState<UserData>({
-    email: "",
-    password: "",
-    confirmPassword: "",
+export const useLoginForm = () =>
+  useZodForm(loginSchema, { email: "", password: "" });
+
+export const useRegisterForm = () =>
+  useZodForm(registerSchema, { email: "", password: "", confirmPassword: "" });
+
+const useZodForm = <TSchema extends ZodType<any, any>>(
+  schema: TSchema,
+  defaultValues?: DefaultValues<z.infer<TSchema>>
+): UseFormReturn<z.infer<TSchema>> =>
+  useForm<z.infer<TSchema>>({
+    resolver: zodResolver(schema),
+    defaultValues,
+    mode: "onChange",
   });
-
-  return { userData, setUserData };
-};

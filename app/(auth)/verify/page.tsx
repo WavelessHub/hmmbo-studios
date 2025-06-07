@@ -2,18 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 
-import { useAuth } from "@/app/hooks/useAuth";
-import { usePath } from "@/app/hooks/usePath";
+import { useRouter } from "next/navigation";
+import { NextPage } from "next";
 
 import { Mail } from "lucide-react";
-
-import { NextPage } from "next";
 
 interface Props {}
 
 const VerifyPage: NextPage<Props> = ({}) => {
-  const { userData } = useAuth();
-  const { router } = usePath();
+  const router = useRouter();
 
   return (
     <div>
@@ -26,7 +23,7 @@ const VerifyPage: NextPage<Props> = ({}) => {
 
         <p className="text-gray-400 text-sm">
           We've sent a verification link to
-          <span className="text-white font-medium">{userData.email}</span>
+          <span className="text-white font-medium">email</span>
         </p>
       </div>
 
@@ -38,7 +35,7 @@ const VerifyPage: NextPage<Props> = ({}) => {
         <Button
           variant="ghost"
           onClick={() => router.push("login")}
-          className="text-primary/70 hover:text-primary mt-2 text-sm font-medium transition-colors"
+          className="text-primary/70 hover:text-primary mt-4 text-sm font-medium transition-colors"
         >
           Back to Sign In
         </Button>

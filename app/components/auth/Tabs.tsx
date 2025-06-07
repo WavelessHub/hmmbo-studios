@@ -15,7 +15,7 @@ const Tabs: NextPage<Props> = ({}) => {
   if (path === "verify") return;
 
   return (
-    <div className="flex mb-8 bg-black/30 rounded-lg p-1">
+    <div className="flex mb-6 bg-black/30 rounded-lg py-1">
       {tabs.map((tab, index) => (
         <Button
           key={index}

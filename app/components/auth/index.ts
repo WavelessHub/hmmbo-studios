@@ -1,5 +1,5 @@
 import Features from "./Features";
+import AuthForm from "./AuthForm";
 import Tabs from "./Tabs";
-import Form from "./Form";
 
-export { Tabs, Form, Features };
+export { Tabs, AuthForm, Features };
