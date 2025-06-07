@@ -22,7 +22,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -104,17 +103,28 @@ const HelpForm: NextPage<Props> = ({}) => {
                     />
                   </SelectTrigger>
 
-                  <SelectContent className="bg-black border-none">
+                  <SelectContent className="bg-neutral-950 border-gray-600 rounded-lg">
                     <SelectGroup>
-                      <SelectItem value="General Enquiry">
+                      <SelectItem
+                        value="General Enquiry"
+                        className="p-3 hover:bg-white/5 rounded-md"
+                      >
                         General Enquiry
                       </SelectItem>
 
-                      <SelectItem value="Technical Support">
+                      <SelectItem
+                        value="Technical Support"
+                        className="p-3 hover:bg-white/5 rounded-md"
+                      >
                         Technical Support
                       </SelectItem>
 
-                      <SelectItem value="Billing">Billing</SelectItem>
+                      <SelectItem
+                        value="Billing"
+                        className="p-3 hover:bg-white/5 rounded-md"
+                      >
+                        Billing
+                      </SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>

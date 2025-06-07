@@ -1,5 +1,6 @@
 import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
+import PluginPreview from "@/app/components/PluginPreview";
 import Footer from "@/app/components/Footer";
 
 import { NextPage } from "next";
@@ -11,7 +12,11 @@ const Page: NextPage<Props> = ({}) => {
     <>
       <Navbar />
       <Hero />
-      <Footer />
+      <PluginPreview />
+
+      <div className="mt-32">
+        <Footer />
+      </div>
     </>
   );
 };
