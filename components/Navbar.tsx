@@ -85,7 +85,7 @@ export const NavItems = ({
           key={idx}
           href={item.link}
           onMouseEnter={() => setHovered(idx)}
-          className="relative px-4 py-2 text-primary"
+          className="relative px-4 py-2 text-primary active:scale-90 transition-all duration-200"
         >
           {hovered === idx && (
             <motion.div
@@ -115,15 +115,13 @@ export const NavbarButton = ({
   children: React.ReactNode;
   className?: string;
 }) => (
-  <Link href={href}>
-    <motion.button
-      whileTap={{ scale: 0.95 }}
-      className={cn(
-        "inline-block cursor-pointer rounded-full px-5 py-2 text-sm font-medium text-white bg-primary hover:bg-primary/90 transition-transform duration-200",
-        className
-      )}
-    >
-      {children}
-    </motion.button>
+  <Link
+    href={href}
+    className={cn(
+      "inline-block cursor-pointer rounded-full px-5 py-2 text-sm font-medium text-white bg-primary hover:bg-primary/90 active:scale-90 transition-all duration-200",
+      className
+    )}
+  >
+    {children}
   </Link>
 );
