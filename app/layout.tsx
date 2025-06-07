@@ -1,46 +1,24 @@
 import { NextPage, type Metadata } from "next";
 import { PropsWithChildren } from "react";
 
-import { Figtree } from "next/font/google";
-import localFont from "next/font/local";
+import { Poppins } from "next/font/google";
 
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
-const figtree = Figtree({
+const font = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-figtree",
-  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Hmmbo Studios",
   description: "An Team of Developers, Hmmbo Studios",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
 };
 
 const RootLayout: NextPage<PropsWithChildren> = ({ children }) => {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.className} ${geistMono.className} ${figtree.className} antialiased`}
-      >
+    <html lang="en" className="h-full w-full" suppressHydrationWarning>
+      <body className={`${font.className} antialiased h-full w-full`}>
         {children}
       </body>
     </html>
