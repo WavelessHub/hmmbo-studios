@@ -22,7 +22,7 @@ const VerifyPage: NextPage<Props> = ({}) => {
         <p className="text-xl font-semibold mt-2">Check Your Email</p>
 
         <p className="text-gray-400 text-sm">
-          We've sent a verification link to
+          We've sent a verification link to{" "}
           <span className="text-white font-medium">email</span>
         </p>
       </div>

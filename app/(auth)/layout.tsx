@@ -1,4 +1,5 @@
-import { Features, Tabs } from "../components/auth";
+import Features from "@/app/components/auth/Features";
+import Tabs from "@/app/components/auth/Tabs";
 
 import { PropsWithChildren } from "react";
 import { NextPage } from "next";

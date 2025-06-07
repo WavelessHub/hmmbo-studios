@@ -1,7 +1,7 @@
 import { NextPage, type Metadata } from "next";
-import { PropsWithChildren } from "react";
-
 import { Poppins } from "next/font/google";
+
+import { PropsWithChildren } from "react";
 
 import "./globals.css";
 

@@ -1,8 +1,8 @@
-import { NextPage } from "next";
+import Navbar from "@/app/components/Navbar";
+import Hero from "@/app/components/Hero";
+import Footer from "@/app/components/Footer";
 
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Footer from "./components/Footer";
+import { NextPage } from "next";
 
 interface Props {}
 

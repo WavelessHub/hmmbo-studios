@@ -1,8 +1,9 @@
 "use client";
 
+import AuthForm from "@/app/components/auth/AuthForm";
+
 import { RegisterSchemaType } from "@/app/schemas/auth";
-import { useRegisterForm } from "@/app/hooks/useAuth";
-import { AuthForm } from "@/app/components/auth";
+import { useRegisterForm } from "@/app/hooks/useForm";
 
 import { NextPage } from "next";
 
@@ -10,7 +11,7 @@ interface Props {}
 
 const RegisterPage: NextPage<Props> = ({}) => {
   const onSubmit = (data: RegisterSchemaType) => {
-    console.log("Register:", data);
+    console.log("Account Register:", data);
   };
 
   return (

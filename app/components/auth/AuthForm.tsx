@@ -37,7 +37,7 @@ function AuthForm<TFormValues extends FieldValues>({
           name={"email" as Path<TFormValues>}
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="block text-sm font-medium text-gray-300 my-2">
+              <FormLabel className="block text-sm font-medium text-gray-300">
                 Email
               </FormLabel>
               <FormControl>
@@ -62,7 +62,7 @@ function AuthForm<TFormValues extends FieldValues>({
           name={"password" as Path<TFormValues>}
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="block text-sm font-medium text-gray-300 my-2">
+              <FormLabel className="block text-sm font-medium text-gray-300">
                 Password
               </FormLabel>
               <FormControl>
@@ -95,7 +95,7 @@ function AuthForm<TFormValues extends FieldValues>({
             name={"confirmPassword" as Path<TFormValues>}
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="block text-sm font-medium text-gray-300 my-2">
+                <FormLabel className="block text-sm font-medium text-gray-300">
                   Confirm Password
                 </FormLabel>
                 <FormControl>

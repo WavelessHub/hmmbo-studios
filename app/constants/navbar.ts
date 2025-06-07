@@ -6,19 +6,19 @@ interface NavbarItem {
 const navbarItems: NavbarItem[] = [
   {
     name: "Home",
-    link: "home",
+    link: "/",
   },
   {
     name: "Projects",
-    link: "projects",
+    link: "/projects",
   },
   {
     name: "Blog",
-    link: "blog",
+    link: "/blog",
   },
   {
     name: "Help",
-    link: "help",
+    link: "/help",
   },
 ];
 
