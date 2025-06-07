@@ -8,11 +8,11 @@ interface Props {}
 const Hero: NextPage<Props> = ({}) => {
   return (
     <div className="flex min-h-screen items-center justify-center text-right select-none">
-      <h1 className="mt-32 font-extrabold text-[6rem] md:text-[11rem] leading-[80px] md:leading-[130px] items-end tracking-[-0.55rem] md:tracking-[-0.65rem] bg-gradient-to-r from-[#20B478] to-[#58B83A] bg-clip-text text-transparent text-center">
+      <p className="mt-32 font-extrabold text-[6rem] md:text-[11rem] leading-[80px] md:leading-[130px] items-end tracking-[-0.55rem] md:tracking-[-0.65rem] bg-gradient-to-r from-[#20B478] to-[#58B83A] bg-clip-text text-transparent text-center">
         HMMBO
         <br />
         <span className="text-[#5277db]">STUDIOS</span>
-      </h1>
+      </p>
 
       <Image
         src={hmmbo}

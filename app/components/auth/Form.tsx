@@ -1,27 +1,22 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+
+import { UserData } from "@/app/hooks/useAuth";
 import { usePath } from "@/app/hooks/usePath";
+
 import { Mail, Lock } from "lucide-react";
-import { useState } from "react";
+
+import { NextPage } from "next";
 
 import Input from "./Input";
 
 interface Props {
-  userData: {
-    email: string;
-    password: string;
-    confirmPassword?: string;
-  };
-  setUserData: (userData: {
-    email: string;
-    password: string;
-    confirmPassword?: string;
-  }) => void;
+  userData: UserData;
+  setUserData: (userData: UserData) => void;
 }
 
-const Form = ({ userData, setUserData }: Props) => {
-  const [showPassword, setShowPassword] = useState(false);
-
+const Form: NextPage<Props> = ({ userData, setUserData }) => {
   const { path, router } = usePath();
 
   return (
@@ -44,9 +39,6 @@ const Form = ({ userData, setUserData }: Props) => {
         onChange={(e: any) =>
           setUserData({ ...userData, password: e.target.value })
         }
-        showPasswordToggle={true}
-        showPassword={showPassword}
-        togglePasswordVisibility={() => setShowPassword(!showPassword)}
       />
 
       {path === "register" && (
@@ -61,22 +53,22 @@ const Form = ({ userData, setUserData }: Props) => {
         />
       )}
 
-      <button
+      <Button
         type="submit"
-        className="w-full bg-primary/90 mt-2 text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02]"
+        className="w-full bg-primary/90 mt-2 text-white font-medium p-6 rounded-lg transition-all duration-200 transform hover:scale-[1.02]"
       >
         {path === "login" ? "Sign In" : "Create Account"}
-      </button>
+      </Button>
 
       {path === "login" && (
         <div className="text-center">
-          <button
-            type="button"
+          <Button
+            variant="ghost"
             onClick={() => router.push("login")}
             className="text-primary/70 hover:text-primary text-sm font-medium transition-colors"
           >
             Forgot your password?
-          </button>
+          </Button>
         </div>
       )}
     </div>

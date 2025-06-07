@@ -1,5 +1,7 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+
 import { useAuth } from "@/app/hooks/useAuth";
 import { usePath } from "@/app/hooks/usePath";
 
@@ -19,22 +21,27 @@ const VerifyPage: NextPage<Props> = ({}) => {
         <div className="w-16 h-16 bg-primary/90 rounded-full flex items-center justify-center mx-auto mb-4">
           <Mail className="w-8 h-8 text-white" />
         </div>
-        <h3 className="text-xl font-semibold mt-2">Check Your Email</h3>
+
+        <p className="text-xl font-semibold mt-2">Check Your Email</p>
+
         <p className="text-gray-400 text-sm">
           We've sent a verification link to
           <span className="text-white font-medium">{userData.email}</span>
         </p>
       </div>
-      <button className="w-full bg-primary/90 hover:bg-primary text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary/70 focus:ring-offset-2 focus:ring-offset-black">
+
+      <Button className="w-full bg-primary/90 hover:bg-primary text-white font-medium p-6 rounded-lg transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary/70 focus:ring-offset-2 focus:ring-offset-black">
         Resend Verification Email
-      </button>
-      <div className="text-center mt-4">
-        <button
+      </Button>
+
+      <div className="text-center">
+        <Button
+          variant="ghost"
           onClick={() => router.push("login")}
           className="text-primary/70 hover:text-primary mt-2 text-sm font-medium transition-colors"
         >
           Back to Sign In
-        </button>
+        </Button>
       </div>
     </div>
   );

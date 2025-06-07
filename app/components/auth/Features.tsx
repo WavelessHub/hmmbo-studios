@@ -3,11 +3,11 @@ import { features } from "@/app/constants/features";
 const Features = () => {
   return (
     <div className="max-w-xl">
-      <h2 className="text-4xl font-bold mb-4 text-white">
+      <p className="text-4xl font-bold mb-4 text-white">
         Premium Quality
         <br />
         <span className="text-blue-200">Without The Premium Price</span>
-      </h2>
+      </p>
 
       <div className="grid grid-cols-2 gap-6 mt-12">
         {features.map((feature, index) => (
@@ -22,7 +22,7 @@ const Features = () => {
                 </span>
               </div>
 
-              <h3 className="text-white font-semibold">{feature.title}</h3>
+              <p className="text-white font-semibold">{feature.title}</p>
             </div>
 
             <p className="text-blue-200 text-sm">{feature.description}</p>

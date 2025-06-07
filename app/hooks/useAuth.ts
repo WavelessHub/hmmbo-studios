@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-interface UserData {
+export interface UserData {
   email: string;
   password: string;
   confirmPassword?: string;
