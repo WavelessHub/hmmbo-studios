@@ -2,10 +2,10 @@ import { plugins } from "@/app/constants/plugins";
 
 import DisplayCard from "./DisplayCard";
 
-const PluginCarousel = () => {
+const Featured = () => {
   return (
     <div>
-      <p className="text-5xl font-medium m-20 text-center text-secondary-gradient">
+      <p className="text-5xl m-20 font-semibold text-center text-secondary-gradient">
         Featured
       </p>
 
@@ -18,4 +18,4 @@ const PluginCarousel = () => {
   );
 };
 
-export default PluginCarousel;
+export default Featured;

@@ -33,6 +33,8 @@ const HelpForm: NextPage<Props> = ({}) => {
 
   const onSubmit = (data: HelpSchemaType) => {
     console.log(data);
+
+    form.reset();
   };
 
   return (
@@ -140,7 +142,7 @@ const HelpForm: NextPage<Props> = ({}) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="block text-base font-medium text-gray-300">
-                Subject
+                Message
               </FormLabel>
 
               <FormControl>

@@ -45,8 +45,8 @@ const DisplayCard = ({
           />
 
           {badge && (
-            <div className="absolute w-full top-0 left-0 right-0 p-2">
-              <p className="font-semibold text-white text-xs bg-red-500 p-2 text-center rounded-lg">
+            <div className="absolute top-0 left-0">
+              <p className="font-semibold text-white text-xs px-6 rounded-br-sm translate-y-1/2 -rotate-90 bg-red-500 p-2 text-center rounded-lg">
                 {badge}
               </p>
             </div>
@@ -78,7 +78,7 @@ const DisplayCard = ({
           </div>
 
           {popularTab ? (
-            <button className="bg-primary text-white cursor-pointer hover:text-black px-3 py-2 rounded text-xs font-medium hover:bg-gray-200 transition">
+            <button className="bg-primary text-white font-semibold cursor-pointer hover:text-black px-3 py-2 rounded text-xs hover:bg-gray-200 transition">
               ADD TO CART
             </button>
           ) : (

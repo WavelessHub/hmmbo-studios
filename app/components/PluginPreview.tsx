@@ -5,7 +5,7 @@ import Image from "next/image";
 import leftChar from "@/app/images/leftcharacter.png";
 import rightChar from "@/app/images/rightcharacter.png";
 
-import PluginCarousel from "./PluginCarousel";
+import Featured from "./Featured";
 
 import { Figtree } from "next/font/google";
 import { NextPage } from "next";
@@ -56,13 +56,14 @@ const PluginPreview: NextPage<Props> = ({}) => {
           <Image src={rightChar} alt="Right Character" />
         </div>
       </div>
+
       <div className="relative">
         {/* Background section */}
         <div className="bg-[#1A1919] h-[30rem]"></div>
 
         {/* Carousel overlayed on top */}
         <div className="absolute top-24 left-0 w-full h-full flex items-center justify-center">
-          <PluginCarousel />
+          <Featured />
         </div>
       </div>
     </section>

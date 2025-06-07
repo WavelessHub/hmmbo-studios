@@ -10,13 +10,15 @@ import { NextPage } from "next";
 interface Props {}
 
 const RegisterPage: NextPage<Props> = ({}) => {
+  const form = useRegisterForm();
+
   const onSubmit = (data: RegisterSchemaType) => {
     console.log("Account Register:", data);
+
+    form.reset();
   };
 
-  return (
-    <AuthForm mode="register" form={useRegisterForm()} onSubmit={onSubmit} />
-  );
+  return <AuthForm mode="register" form={form} onSubmit={onSubmit} />;
 };
 
 export default RegisterPage;

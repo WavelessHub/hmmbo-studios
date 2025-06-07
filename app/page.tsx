@@ -5,6 +5,11 @@ import Footer from "@/app/components/Footer";
 
 import { NextPage } from "next";
 
+import Category from "./components/Category";
+import Popularity from "./components/Popularity";
+import Reviews from "./components/Reviews";
+import Supporters from "./components/Supporters";
+
 interface Props {}
 
 const Page: NextPage<Props> = ({}) => {
@@ -14,9 +19,13 @@ const Page: NextPage<Props> = ({}) => {
       <Hero />
       <PluginPreview />
 
-      <div className="mt-32">
-        <Footer />
-      </div>
+      <div className="mt-32" />
+      <Category />
+      <Popularity />
+      <Reviews />
+      <Supporters />
+
+      <Footer />
     </>
   );
 };
