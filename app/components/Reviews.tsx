@@ -22,7 +22,7 @@ const Reviews: NextPage = ({}) => {
   return (
     <div className="w-full flex flex-col">
       {/* Heading */}
-      <div className="m-20 text-center">
+      <div className="mt-28 m-20 text-center">
         <p className="font-bold text-4xl md:text-5xl text-secondary-gradient">
           Real Feedback From Real Users
         </p>

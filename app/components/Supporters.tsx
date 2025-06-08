@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Supporters: NextPage = ({}) => {
   return (
-    <section className="p-4 mt-40 mb-20 flex flex-col items-center w-full select-none">
+    <section className="p-4 my-20 flex flex-col items-center w-full select-none">
       {/* Heading */}
       <p className="font-black pb-2 text-3xl md:text-5xl leading-[68px] text-secondary-gradient mb-16 text-center">
         Thanks for Sharing Our Work
