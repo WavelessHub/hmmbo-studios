@@ -15,7 +15,7 @@ import { NextPage } from "next";
 import Image from "next/image";
 
 interface Props extends ItemData {
-  popularTab: boolean;
+  popularTab?: boolean;
 }
 
 const DisplayCard: NextPage<Props> = ({
