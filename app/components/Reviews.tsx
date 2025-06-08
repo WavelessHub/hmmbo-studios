@@ -9,8 +9,6 @@ import Image from "next/image";
 
 import { NextPage } from "next";
 
-import { motion } from "motion/react";
-
 const Reviews: NextPage = ({}) => {
   const [sliderRef] = useKeenSlider({
     mode: "free-snap",
@@ -24,46 +22,25 @@ const Reviews: NextPage = ({}) => {
   return (
     <div className="w-full flex flex-col">
       {/* Heading */}
-      <motion.section
-        viewport={{ once: true }}
-        initial={{ opacity: 0, translateY: 100 }}
-        whileInView={{ opacity: 1, translateY: 0 }}
-        transition={{ duration: 1, type: "tween" }}
-        className="mt-28 m-20 text-center"
-      >
+      <div className="mt-28 m-20 text-center">
         <p className="font-bold text-4xl md:text-5xl text-secondary-gradient">
           Real Feedback From Real Users
         </p>
-      </motion.section>
+      </div>
 
       {/* Carousel */}
       <div className="w-full overflow-hidden">
         <div ref={sliderRef} className="keen-slider px-4">
           {/* Promo Card */}
-          <motion.section
-            viewport={{ once: true }}
-            initial={{ opacity: 0, translateY: 100 }}
-            whileInView={{ opacity: 1, translateY: 0 }}
-            transition={{ duration: 1, type: "tween" }}
-          >
-            <CarouselSlide>
-              <PromoReviewCard />
-            </CarouselSlide>
-          </motion.section>
+          <CarouselSlide>
+            <PromoReviewCard />
+          </CarouselSlide>
 
           {/* User Reviews */}
           {reviews.map((review, idx) => (
-            <motion.section
-              key={idx}
-              viewport={{ once: true }}
-              initial={{ opacity: 0, translateY: 100 }}
-              whileInView={{ opacity: 1, translateY: 0 }}
-              transition={{ duration: 1, delay: idx * 0.2, type: "tween" }}
-            >
-              <CarouselSlide>
-                <ReviewCard {...review} />
-              </CarouselSlide>
-            </motion.section>
+            <CarouselSlide key={idx}>
+              <ReviewCard {...review} />
+            </CarouselSlide>
           ))}
         </div>
       </div>

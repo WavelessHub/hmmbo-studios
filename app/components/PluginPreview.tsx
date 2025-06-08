@@ -10,8 +10,6 @@ import Featured from "./Featured";
 import { Figtree } from "next/font/google";
 import { NextPage } from "next";
 
-import { motion } from "motion/react";
-
 const figtree = Figtree({
   subsets: ["latin"],
   weight: ["800", "600", "500"],
@@ -21,13 +19,7 @@ const figtree = Figtree({
 
 const PluginPreview: NextPage = ({}) => {
   return (
-    <motion.section
-      viewport={{ once: true }}
-      initial={{ opacity: 0, translateY: 100 }}
-      whileInView={{ opacity: 1, translateY: 0 }}
-      transition={{ duration: 1, type: "tween" }}
-      className="w-full"
-    >
+    <div className="w-full">
       {/* Title above the flex container */}
       <div className="mb-[-8em] text-center">
         <p
@@ -72,7 +64,7 @@ const PluginPreview: NextPage = ({}) => {
           <Featured />
         </div>
       </div>
-    </motion.section>
+    </div>
   );
 };
 
