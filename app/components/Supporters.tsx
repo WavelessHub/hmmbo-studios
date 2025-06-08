@@ -1,9 +1,9 @@
-import { supporters } from "@/app/constants/supporters";
+import { supporters, type Supporter } from "@/app/constants/supporters";
+
+import { NextPage } from "next";
 
 import Image from "next/image";
 import Link from "next/link";
-
-import { NextPage } from "next";
 
 interface Props {}
 
@@ -19,7 +19,7 @@ const Supporters: NextPage<Props> = ({}) => {
       <div className="w-full md:px-80">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {supporters.map((item, index) => (
-            <TCard
+            <ThanksCard
               key={index}
               title={item.title}
               description={item.description}
@@ -33,14 +33,7 @@ const Supporters: NextPage<Props> = ({}) => {
   );
 };
 
-interface TCardProps {
-  title: string;
-  description: string;
-  imageUrl: string;
-  url: string;
-}
-
-const TCard = ({ title, description, imageUrl, url }: TCardProps) => {
+const ThanksCard = ({ title, description, imageUrl, url }: Supporter) => {
   return (
     <div className="flex flex-col items-center text-center">
       {/* Circular Image with Border */}

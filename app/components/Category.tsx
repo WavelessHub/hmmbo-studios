@@ -23,7 +23,7 @@ const Category: NextPage<Props> = ({}) => {
 
   return (
     <div className="w-full flex items-center justify-center">
-      <div className="mt-20 flex flex-col max-w-7xl">
+      <div className="mt-12 flex flex-col max-w-7xl">
         <p className="text-5xl m-20 pb-2 font-semibold text-center text-secondary-gradient">
           Browse By Category
         </p>

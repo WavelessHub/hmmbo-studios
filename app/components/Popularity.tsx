@@ -14,7 +14,7 @@ const Popularity: NextPage<Props> = ({}) => {
       {/* Background section */}
       <div className="absolute left-0 top-[-15em]  w-full h-full flex items-center justify-center ">
         <div>
-          <p className="text-5xl m-20 font-semibold text-center text-secondary-gradient">
+          <p className="text-5xl m-20 mb-24 font-semibold text-center text-secondary-gradient">
             Popular
           </p>
 

@@ -1,3 +1,5 @@
+import { ItemData } from "@/app/constants/plugins";
+
 import { ArrowRight } from "lucide-react";
 
 import {
@@ -8,29 +10,24 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import { NextPage } from "next";
+
 import Image from "next/image";
 
-type DisplayCardProps = {
-  title: string;
-  price: string;
-  bgImage: string;
-  description: string;
-  badge?: string;
-  originalPrice?: string;
-  popularTab?: boolean;
-  onBuy: () => void;
-};
+interface Props extends ItemData {
+  popularTab: boolean;
+}
 
-const DisplayCard = ({
-  bgImage,
+const DisplayCard: NextPage<Props> = ({
   title,
   description,
   price,
   originalPrice,
+  bgImage,
   onBuy,
-  badge,
   popularTab,
-}: DisplayCardProps) => {
+  badge,
+}) => {
   return (
     <Card className="group relative w-[20rem] h-[30rem] py-0 rounded-lg overflow-hidden border border-white/10 bg-black shadow-md hover:shadow-2xl transition-shadow duration-300">
       <CardContent className="flex flex-col justify-between h-full p-0">
@@ -71,10 +68,12 @@ const DisplayCard = ({
                 !originalPrice && "text-transparent"
               }`}
             >
-              €{originalPrice || 0}
+              €{originalPrice?.toFixed(2) || 0}
             </div>
 
-            <div className="text-2xl font-bold text-white">€{price}</div>
+            <div className="text-2xl font-bold text-white">
+              €{price.toFixed(2)}
+            </div>
           </div>
 
           {popularTab ? (

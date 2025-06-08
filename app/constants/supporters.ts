@@ -5,7 +5,7 @@ interface Supporter {
   imageUrl: string;
 }
 
-export const supporters: Supporter[] = [
+const supporters: Supporter[] = [
   {
     title: "KasaiSora",
     description: "Youtuber",
@@ -28,3 +28,5 @@ export const supporters: Supporter[] = [
       "https://yt3.googleusercontent.com/cGh9pDV3UliBmkLgxFfkBNcCJIxzKF76WO9xLFvhPzXZTfxJ8Bl-LlJwcdimI8Pe8oBo5dnDv14=s160-c-k-c0x00ffffff-no-rj",
   },
 ];
+
+export { supporters, type Supporter };

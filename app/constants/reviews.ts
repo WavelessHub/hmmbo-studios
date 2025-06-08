@@ -6,7 +6,7 @@ interface Review {
   reviewImageUrl: string;
 }
 
-export const reviews: Review[] = [
+const reviews: Review[] = [
   {
     text: "Changed my entire server experience!",
     name: "DevMaster",
@@ -50,3 +50,5 @@ export const reviews: Review[] = [
     reviewImageUrl: "https://via.placeholder.com/32x24",
   },
 ];
+
+export { reviews, type Review };
