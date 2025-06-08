@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 
 import Image from "next/image";
-import hmmbo from "../images/hmmbo.png";
+import hmmbo from "@/images/hmmbo.png";
 
 const Hero: NextPage = ({}) => {
   return (

@@ -1,6 +1,7 @@
 import { NextPage } from "next";
+
+import hmmbo from "@/images/hmmbo.png";
 import Image from "next/image";
-import hmmbo from "@/app/images/hmmbo.png";
 
 const NotFoundPage: NextPage = ({}) => {
   return (

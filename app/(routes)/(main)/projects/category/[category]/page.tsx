@@ -2,7 +2,7 @@
 
 import ProjectCard from "@/app/components/ProjectCard";
 
-import { projects } from "@/app/constants/projects";
+import { projects } from "@/constants/projects";
 import { NextPage } from "next";
 
 import Link from "next/link";

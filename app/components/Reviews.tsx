@@ -3,11 +3,13 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
-import { reviews } from "@/app/constants/reviews";
+import { reviews } from "@/constants/reviews";
 import Link from "next/link";
 import Image from "next/image";
 
 import { NextPage } from "next";
+
+import { motion } from "motion/react";
 
 const Reviews: NextPage = ({}) => {
   const [sliderRef] = useKeenSlider({
@@ -22,25 +24,46 @@ const Reviews: NextPage = ({}) => {
   return (
     <div className="w-full flex flex-col">
       {/* Heading */}
-      <div className="mt-28 m-20 text-center">
+      <motion.section
+        viewport={{ once: true }}
+        initial={{ opacity: 0, translateY: 100 }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        transition={{ duration: 1, type: "tween" }}
+        className="mt-28 m-20 text-center"
+      >
         <p className="font-bold text-4xl md:text-5xl text-secondary-gradient">
           Real Feedback From Real Users
         </p>
-      </div>
+      </motion.section>
 
       {/* Carousel */}
       <div className="w-full overflow-hidden">
         <div ref={sliderRef} className="keen-slider px-4">
           {/* Promo Card */}
-          <CarouselSlide>
-            <PromoReviewCard />
-          </CarouselSlide>
+          <motion.section
+            viewport={{ once: true }}
+            initial={{ opacity: 0, translateY: 100 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            transition={{ duration: 1, type: "tween" }}
+          >
+            <CarouselSlide>
+              <PromoReviewCard />
+            </CarouselSlide>
+          </motion.section>
 
           {/* User Reviews */}
           {reviews.map((review, idx) => (
-            <CarouselSlide key={idx}>
-              <ReviewCard {...review} />
-            </CarouselSlide>
+            <motion.section
+              key={idx}
+              viewport={{ once: true }}
+              initial={{ opacity: 0, translateY: 100 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              transition={{ duration: 1, delay: idx * 0.2, type: "tween" }}
+            >
+              <CarouselSlide>
+                <ReviewCard {...review} />
+              </CarouselSlide>
+            </motion.section>
           ))}
         </div>
       </div>

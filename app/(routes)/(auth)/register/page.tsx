@@ -2,8 +2,8 @@
 
 import AuthForm from "@/app/components/auth/AuthForm";
 
-import { RegisterSchemaType } from "@/app/schemas/auth";
-import { useRegisterForm } from "@/app/hooks/useForm";
+import { RegisterSchemaType } from "@/schemas/auth";
+import { useRegisterForm } from "@/hooks/useForm";
 
 import { NextPage } from "next";
 

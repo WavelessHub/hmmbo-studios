@@ -1,4 +1,4 @@
-import { ItemData } from "@/app/constants/plugins";
+import { ItemData } from "@/constants/plugins";
 
 import { ArrowRight } from "lucide-react";
 

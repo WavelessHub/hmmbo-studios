@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 
 import { PropsWithChildren } from "react";
 
-import "./globals.css";
+import "@/app/globals.css";
 
 const font = Poppins({
   subsets: ["latin"],

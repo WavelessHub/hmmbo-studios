@@ -1,4 +1,4 @@
-import { features } from "@/app/constants/features";
+import { features } from "@/constants/features";
 
 const Features = () => {
   return (

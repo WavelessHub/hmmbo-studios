@@ -1,6 +1,6 @@
 "use client";
 
-import { useScroll } from "@/app/hooks/useScroll";
+import { useScroll } from "@/hooks/useScroll";
 
 import { ArrowUp } from "lucide-react";
 import { motion } from "motion/react";

@@ -1,6 +1,6 @@
 "use client";
 
-import { Project } from "@/app/constants/projects";
+import { Project } from "@/constants/projects";
 
 import { Button } from "@/components/ui/button";
 

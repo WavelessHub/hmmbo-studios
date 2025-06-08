@@ -1,7 +1,7 @@
 "use client";
 
-import { HelpSchemaType } from "@/app/schemas/help";
-import { useHelpForm } from "@/app/hooks/useForm";
+import { HelpSchemaType } from "@/schemas/help";
+import { useHelpForm } from "@/hooks/useForm";
 
 import { NextPage } from "next";
 

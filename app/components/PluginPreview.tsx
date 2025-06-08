@@ -2,13 +2,15 @@
 
 import Image from "next/image";
 
-import leftChar from "@/app/images/leftcharacter.png";
-import rightChar from "@/app/images/rightcharacter.png";
+import leftChar from "@/images/leftcharacter.png";
+import rightChar from "@/images/rightcharacter.png";
 
 import Featured from "./Featured";
 
 import { Figtree } from "next/font/google";
 import { NextPage } from "next";
+
+import { motion } from "motion/react";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -19,7 +21,13 @@ const figtree = Figtree({
 
 const PluginPreview: NextPage = ({}) => {
   return (
-    <section className="w-full">
+    <motion.section
+      viewport={{ once: true }}
+      initial={{ opacity: 0, translateY: 100 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      transition={{ duration: 1, type: "tween" }}
+      className="w-full"
+    >
       {/* Title above the flex container */}
       <div className="mb-[-8em] text-center">
         <p
@@ -64,7 +72,7 @@ const PluginPreview: NextPage = ({}) => {
           <Featured />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -5,7 +5,7 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { NextPage } from "next";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
-import { navbarItems, type NavbarItem } from "@/app/constants/navbar";
+import { navbarItems, type NavbarItem } from "@/constants/navbar";
 
 const Navbar: NextPage = ({}) => {
   return (

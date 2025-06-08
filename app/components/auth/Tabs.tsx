@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 
-import { usePath } from "@/app/hooks/usePath";
+import { usePath } from "@/hooks/usePath";
 
 import { NextPage } from "next";
 

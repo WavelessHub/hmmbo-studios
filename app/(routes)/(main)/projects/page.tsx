@@ -1,11 +1,11 @@
 "use client";
 
 import ProjectCard from "@/app/components/ProjectCard";
+import { projects } from "@/constants/projects";
 
 import { NextPage } from "next";
 
 import Link from "next/link";
-import { projects } from "../constants/projects";
 
 const ProjectsPage: NextPage = ({}) => {
   return (

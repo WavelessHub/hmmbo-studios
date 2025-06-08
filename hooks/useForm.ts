@@ -2,8 +2,8 @@ import { DefaultValues, useForm, UseFormReturn } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z, ZodTypeAny } from "zod";
 
-import { loginSchema, registerSchema } from "@/app/schemas/auth";
-import { helpSchema } from "@/app/schemas/help";
+import { loginSchema, registerSchema } from "@/schemas/auth";
+import { helpSchema } from "@/schemas/help";
 
 export const useLoginForm = () =>
   useZodForm(loginSchema, { email: "", password: "" });
