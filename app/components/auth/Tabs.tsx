@@ -6,9 +6,7 @@ import { usePath } from "@/app/hooks/usePath";
 
 import { NextPage } from "next";
 
-interface Props {}
-
-const Tabs: NextPage<Props> = ({}) => {
+const Tabs: NextPage = ({}) => {
   const { path, router } = usePath();
 
   if (path === "verify") return;

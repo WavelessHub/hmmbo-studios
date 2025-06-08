@@ -7,9 +7,7 @@ import { useLoginForm } from "@/app/hooks/useForm";
 
 import { NextPage } from "next";
 
-interface Props {}
-
-const LoginPage: NextPage<Props> = ({}) => {
+const LoginPage: NextPage = ({}) => {
   const form = useLoginForm();
 
   const onSubmit = (data: LoginSchemaType) => {

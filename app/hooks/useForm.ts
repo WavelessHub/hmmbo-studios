@@ -1,6 +1,6 @@
 import { DefaultValues, useForm, UseFormReturn } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z, ZodType } from "zod";
+import { z, ZodTypeAny } from "zod";
 
 import { loginSchema, registerSchema } from "@/app/schemas/auth";
 import { helpSchema } from "@/app/schemas/help";
@@ -19,7 +19,7 @@ export const useHelpForm = () =>
     message: "",
   });
 
-const useZodForm = <TSchema extends ZodType<any, any>>(
+const useZodForm = <TSchema extends ZodTypeAny>(
   schema: TSchema,
   defaultValues?: DefaultValues<z.infer<TSchema>>
 ): UseFormReturn<z.infer<TSchema>> =>

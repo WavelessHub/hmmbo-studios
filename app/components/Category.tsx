@@ -11,9 +11,7 @@ import img4 from "@/app/images/Misc.png";
 
 import { NextPage } from "next";
 
-interface Props {}
-
-const Category: NextPage<Props> = ({}) => {
+const Category: NextPage = ({}) => {
   const items = [
     { name: "Adventure", image: img1 },
     { name: "Survival", image: img2 },

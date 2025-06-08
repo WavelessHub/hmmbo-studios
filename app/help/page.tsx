@@ -6,9 +6,7 @@ import Link from "next/link";
 
 import { NextPage } from "next";
 
-interface Props {}
-
-const HelpPage: NextPage<Props> = ({}) => {
+const HelpPage: NextPage = ({}) => {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="flex-1">
@@ -28,7 +26,7 @@ const HelpPage: NextPage<Props> = ({}) => {
                 </p>
                 <p>
                   We&#39;re here to help! Please feel free to ask us anything
-                  about our company or the services we provide. We'll do our
+                  about our company or the services we provide. We&#39;ll do our
                   best to provide you with the information you need.
                 </p>
               </div>
@@ -37,8 +35,8 @@ const HelpPage: NextPage<Props> = ({}) => {
                 <p className="font-semibold mb-1">Do we issue refunds?</p>
                 <p>
                   Due to the virtual nature of our products/services, we do not
-                  offer refunds. However, we're here to address any questions or
-                  concerns you may have before making a purchase.
+                  offer refunds. However, we&#39;re here to address any
+                  questions or concerns you may have before making a purchase.
                 </p>
               </div>
 

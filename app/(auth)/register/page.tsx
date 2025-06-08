@@ -7,9 +7,7 @@ import { useRegisterForm } from "@/app/hooks/useForm";
 
 import { NextPage } from "next";
 
-interface Props {}
-
-const RegisterPage: NextPage<Props> = ({}) => {
+const RegisterPage: NextPage = ({}) => {
   const form = useRegisterForm();
 
   const onSubmit = (data: RegisterSchemaType) => {

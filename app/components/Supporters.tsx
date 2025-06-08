@@ -5,9 +5,7 @@ import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-interface Props {}
-
-const Supporters: NextPage<Props> = ({}) => {
+const Supporters: NextPage = ({}) => {
   return (
     <section className="p-4 mt-40 mb-20 flex flex-col items-center w-full select-none">
       {/* Heading */}

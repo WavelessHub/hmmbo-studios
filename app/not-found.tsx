@@ -2,9 +2,7 @@ import { NextPage } from "next";
 import Image from "next/image";
 import hmmbo from "@/app/images/hmmbo.png";
 
-interface Props {}
-
-const NotFoundPage: NextPage<Props> = ({}) => {
+const NotFoundPage: NextPage = ({}) => {
   return (
     <div className="flex w-full h-full items-center justify-center text-right select-none">
       <p className="mt-10 pt-2 font-extrabold text-[6rem] md:text-[11rem] leading-[80px] md:leading-[130px] items-end tracking-[-0.55rem] md:tracking-[-0.65rem] text-secondary-gradient text-center">

@@ -7,9 +7,7 @@ import { NextPage } from "next";
 import Link from "next/link";
 import { projects } from "../constants/projects";
 
-interface Props {}
-
-const ProjectsPage: NextPage<Props> = ({}) => {
+const ProjectsPage: NextPage = ({}) => {
   return (
     <div className="w-full flex flex-col items-center justify-center px-4 py-8 mb-32">
       <div className="flex flex-col mt-16 mx-12">

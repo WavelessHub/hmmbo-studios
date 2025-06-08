@@ -9,9 +9,7 @@ import Supporters from "@/app/components/Supporters";
 
 import { NextPage } from "next";
 
-interface Props {}
-
-const Page: NextPage<Props> = ({}) => {
+const Page: NextPage = ({}) => {
   return (
     <>
       <Navbar />

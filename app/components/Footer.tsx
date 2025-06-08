@@ -2,9 +2,7 @@ import { NextPage } from "next";
 
 import Link from "next/link";
 
-interface Props {}
-
-const Footer: NextPage<Props> = () => {
+const Footer: NextPage = () => {
   return (
     <div className="w-full bg-transparent text-center text-zinc-300 py-10">
       <div className="w-full h-[1.5px] bg-zinc-400 mb-10" />

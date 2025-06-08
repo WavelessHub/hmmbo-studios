@@ -7,9 +7,7 @@ import Link from "next/link";
 import React, { useRef, useState } from "react";
 import { navbarItems, type NavbarItem } from "@/app/constants/navbar";
 
-interface Props {}
-
-const Navbar: NextPage<Props> = ({}) => {
+const Navbar: NextPage = ({}) => {
   return (
     <NavbarLayout>
       <NavBody>

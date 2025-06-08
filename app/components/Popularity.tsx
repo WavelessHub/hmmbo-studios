@@ -6,9 +6,7 @@ import DisplayCard from "./DisplayCard";
 
 import { NextPage } from "next";
 
-interface Props {}
-
-const Popularity: NextPage<Props> = ({}) => {
+const Popularity: NextPage = ({}) => {
   return (
     <div className="relative mt-96">
       {/* Background section */}

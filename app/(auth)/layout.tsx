@@ -13,7 +13,7 @@ const AuthLayout: NextPage<PropsWithChildren> = ({ children }) => {
           <div className="text-center mb-12">
             <p className="text-4xl font-bold mt-2">Welcome</p>
             <p className="text-gray-400 mt-2">
-              Let's get you signed in to{" "}
+              Let&#39;s get you signed in to{" "}
               <span className="text-primary font-semibold">Hmmbo Studios</span>
             </p>
           </div>

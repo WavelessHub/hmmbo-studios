@@ -7,9 +7,7 @@ import { NextPage } from "next";
 
 import { Mail } from "lucide-react";
 
-interface Props {}
-
-const VerifyPage: NextPage<Props> = ({}) => {
+const VerifyPage: NextPage = ({}) => {
   const router = useRouter();
 
   return (
@@ -22,7 +20,7 @@ const VerifyPage: NextPage<Props> = ({}) => {
         <p className="text-xl font-semibold mt-2">Check Your Email</p>
 
         <p className="text-gray-400 text-sm">
-          We've sent a verification link to{" "}
+          We&#39;ve sent a verification link to{" "}
           <span className="text-white font-medium">email</span>
         </p>
       </div>

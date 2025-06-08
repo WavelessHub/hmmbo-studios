@@ -9,9 +9,7 @@ import Image from "next/image";
 
 import { NextPage } from "next";
 
-interface Props {}
-
-const Reviews: NextPage<Props> = ({}) => {
+const Reviews: NextPage = ({}) => {
   const [sliderRef] = useKeenSlider({
     mode: "free-snap",
     slides: {
@@ -25,9 +23,9 @@ const Reviews: NextPage<Props> = ({}) => {
     <div className="w-full flex flex-col">
       {/* Heading */}
       <div className="m-20 text-center">
-        <h2 className="font-bold text-4xl md:text-5xl text-secondary-gradient">
+        <p className="font-bold text-4xl md:text-5xl text-secondary-gradient">
           Real Feedback From Real Users
-        </h2>
+        </p>
       </div>
 
       {/* Carousel */}
@@ -99,9 +97,11 @@ const ReviewCard = ({
         {/* Review Link */}
         {reviewLink && reviewImageUrl ? (
           <Link href={reviewLink} target="_blank" rel="noopener noreferrer">
-            <img
+            <Image
               src={reviewImageUrl}
               alt="Review"
+              width={32}
+              height={24}
               className="w-8 h-6 object-contain rounded-sm hover:opacity-80 transition"
             />
           </Link>

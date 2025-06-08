@@ -26,9 +26,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-interface Props {}
-
-const HelpForm: NextPage<Props> = ({}) => {
+const HelpForm: NextPage = ({}) => {
   const form = useHelpForm();
 
   const onSubmit = (data: HelpSchemaType) => {

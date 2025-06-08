@@ -1,9 +1,7 @@
 import { redirect } from "next/navigation";
 import { NextPage } from "next";
 
-interface Props {}
-
-const Page: NextPage<Props> = ({}) => {
+const Page: NextPage = ({}) => {
   return redirect("/projects");
 };
 

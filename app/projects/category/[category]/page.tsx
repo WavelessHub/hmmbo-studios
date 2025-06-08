@@ -8,9 +8,7 @@ import { NextPage } from "next";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
-interface Props {}
-
-const Page: NextPage<Props> = ({}) => {
+const Page: NextPage = ({}) => {
   const { category }: { category: string } = useParams();
 
   const filteredProjects = projects.filter(

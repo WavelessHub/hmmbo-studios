@@ -17,9 +17,7 @@ const figtree = Figtree({
   display: "swap",
 });
 
-interface Props {}
-
-const PluginPreview: NextPage<Props> = ({}) => {
+const PluginPreview: NextPage = ({}) => {
   return (
     <section className="w-full">
       {/* Title above the flex container */}

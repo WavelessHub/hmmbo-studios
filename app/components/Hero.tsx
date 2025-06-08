@@ -3,9 +3,7 @@ import { NextPage } from "next";
 import Image from "next/image";
 import hmmbo from "../images/hmmbo.png";
 
-interface Props {}
-
-const Hero: NextPage<Props> = ({}) => {
+const Hero: NextPage = ({}) => {
   return (
     <div className="flex min-h-screen items-center justify-center text-right select-none">
       <p className="mt-32 font-extrabold text-[6rem] md:text-[11rem] leading-[80px] md:leading-[130px] items-end tracking-[-0.55rem] md:tracking-[-0.65rem] bg-gradient-to-r from-[#20B478] to-[#58B83A] bg-clip-text text-transparent text-center">
