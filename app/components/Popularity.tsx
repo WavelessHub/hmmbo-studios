@@ -12,7 +12,7 @@ const Popularity: NextPage = ({}) => {
       {/* Background section */}
       <div className="absolute left-0 top-[-15em]  w-full h-full flex items-center justify-center ">
         <div>
-          <p className="text-5xl m-20 mb-24 font-semibold text-center text-secondary-gradient">
+          <p className="text-5xl mt-20 mb-24 font-semibold text-center text-secondary-gradient">
             Popular
           </p>
 
@@ -24,7 +24,7 @@ const Popularity: NextPage = ({}) => {
         </div>
       </div>
 
-      <div className="bg-[#1A1919] w-[98.5vw] h-[28rem]" />
+      <div className="bg-[#1A1919] w-full h-[28rem]" />
     </div>
   );
 };
