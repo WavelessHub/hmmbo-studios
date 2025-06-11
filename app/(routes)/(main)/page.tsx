@@ -1,5 +1,3 @@
-"use client";
-
 import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
 import PluginPreview from "@/app/components/PluginPreview";
@@ -10,14 +8,9 @@ import Reviews from "@/app/components/Reviews";
 import Supporters from "@/app/components/Supporters";
 import ScrollUpButton from "@/app/components/ScrollUpButton";
 
-import { useEffect } from "react";
 import { NextPage } from "next";
 
 const Page: NextPage = ({}) => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="relative">
       <Navbar />

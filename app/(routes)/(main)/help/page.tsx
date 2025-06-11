@@ -1,5 +1,4 @@
 import HelpForm from "@/app/components/HelpForm";
-import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 
 import Link from "next/link";
@@ -10,8 +9,6 @@ const HelpPage: NextPage = ({}) => {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="flex-1">
-        <Navbar />
-
         <div className="flex pt-28 items-start justify-center text-white">
           <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Left: Client Form */}

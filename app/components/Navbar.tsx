@@ -4,8 +4,16 @@ import { cn } from "@/lib/utils";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { NextPage } from "next";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import {
+  Children,
+  cloneElement,
+  isValidElement,
+  ReactElement,
+  useRef,
+  useState,
+} from "react";
 import { navbarItems, type NavbarItem } from "@/constants/navbar";
+import { usePathname } from "next/navigation";
 
 const Navbar: NextPage = ({}) => {
   return (
@@ -41,12 +49,11 @@ const NavbarLayout = ({ children, className }: NavbarLayoutProps) => {
         className
       )}
     >
-      {React.Children.map(children, (child) =>
-        React.isValidElement(child)
-          ? React.cloneElement(
-              child as React.ReactElement<{ visible?: boolean }>,
-              { visible }
-            )
+      {Children.map(children, (child) =>
+        isValidElement(child)
+          ? cloneElement(child as ReactElement<{ visible?: boolean }>, {
+              visible,
+            })
           : child
       )}
     </motion.div>
@@ -79,6 +86,8 @@ interface NavbarItemProps {
 const NavbarItems = ({ items, className }: NavbarItemProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
+  const pathname = usePathname();
+
   return (
     <motion.div
       onMouseLeave={() => setHovered(null)}
@@ -94,7 +103,7 @@ const NavbarItems = ({ items, className }: NavbarItemProps) => {
           onMouseEnter={() => setHovered(idx)}
           className="relative px-4 py-2 text-primary active:scale-90 transition-all duration-200"
         >
-          {hovered === idx && (
+          {(hovered === idx || pathname === item.link) && (
             <motion.div
               layoutId="hovered"
               className="absolute inset-0 rounded-full bg-neutral-800/80"
