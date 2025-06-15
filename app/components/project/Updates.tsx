@@ -1,7 +1,5 @@
 "use client";
 
-import { Separator } from "@/components/ui/separator";
-
 import { Update } from "@/constants/projects";
 
 import { NextPage } from "next";
