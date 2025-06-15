@@ -2,14 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 
-import { usePath } from "@/hooks/usePath";
+import { useRouter } from "next/navigation";
 
 import { NextPage } from "next";
 
 import { Mail } from "lucide-react";
 
 const VerifyPage: NextPage = ({}) => {
-  const { router } = usePath();
+  const { push } = useRouter();
 
   return (
     <div>
@@ -33,7 +33,7 @@ const VerifyPage: NextPage = ({}) => {
       <div className="text-center">
         <Button
           variant="ghost"
-          onClick={() => router.push("login")}
+          onClick={() => push("login")}
           className="text-primary/70 hover:text-primary mt-4 text-sm font-medium transition-colors"
         >
           Back to Sign In
