@@ -10,7 +10,7 @@ const tabs: string[] = ["overview", "wiki", "updates", "version", "reviews"];
 
 const Tabs: NextPage = ({}) => {
   const { path, router } = usePath();
-  const { get } = useSearchParams();
+  const params = useSearchParams();
 
   return (
     <div className="flex items-center gap-x-1">
@@ -20,7 +20,7 @@ const Tabs: NextPage = ({}) => {
           onClick={() => router.push(`/${path}?tab=${tab}`)}
           className={cn(
             "flex-1 font-bold text-base py-8 rounded-none",
-            get("tab") === tab ? "bg-primary/80" : "bg-primary"
+            params.get("tab") === tab ? "bg-primary/80" : "bg-primary"
           )}
         >
           {tab.toUpperCase()}
