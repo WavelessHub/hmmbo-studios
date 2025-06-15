@@ -7,7 +7,7 @@ import Updates from "@/app/components/project/Updates";
 
 import { Project, projects } from "@/constants/projects";
 
-import { usePath } from "@/hooks/usePath";
+import { useSearchParams, redirect } from "next/navigation";
 
 import { NextPage } from "next";
 
@@ -16,13 +16,13 @@ interface Props {
 }
 
 const ProjectPage: NextPage<Props> = ({ params: { id } }) => {
-  const { params, redirect } = usePath();
+  const { get } = useSearchParams();
 
   const { comments, versions, updates }: Project = projects.filter(
     (project) => project.id === id
   )[0];
 
-  switch (params.get("tab")) {
+  switch (get("tab")) {
     case "overview":
       return <Overview id={id} comments={comments} />;
 
