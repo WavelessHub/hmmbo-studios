@@ -14,10 +14,10 @@ interface Props {
 
 const Updates: NextPage<Props> = ({ updates }) => {
   return (
-    <div className="w-full h-full p-10">
-      <div className="space-y-10">
+    <div className="w-full h-full p-6 pl-0">
+      <div className="space-y-6">
         {updates.map((update, index) => (
-          <div key={index}>
+          <div key={index} className="bg-zinc-900/60 px-10 py-8 rounded-xl">
             <p className="text-3xl font-bold mb-8">{update.title}</p>
 
             <div className="mb-8">
@@ -42,24 +42,20 @@ const Updates: NextPage<Props> = ({ updates }) => {
               </p>
             )}
 
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-x-2 mb-4">
-                <Image
-                  src={update.author.avatarUrl}
-                  alt="pfp"
-                  width={512}
-                  height={512}
-                  className="w-8 h-8 rounded-full bg-cover bg-center"
-                />
+            <div className="flex items-center gap-x-3 mt-4">
+              <Image
+                src={update.author.avatarUrl}
+                alt="pfp"
+                width={512}
+                height={512}
+                className="w-8 h-8 rounded-full bg-cover bg-center"
+              />
 
-                <p className="text-[15px] font-medium text-gray-400">
-                  {update.author.username},{" "}
-                  {update.timestamp.toLocaleTimeString()}
-                </p>
-              </div>
+              <p className="text-[15px] font-medium text-gray-400">
+                {update.author.username},{" "}
+                {update.timestamp.toLocaleTimeString()}
+              </p>
             </div>
-
-            <Separator className="bg-zinc-800 h-0.5 rounded-full" />
           </div>
         ))}
       </div>

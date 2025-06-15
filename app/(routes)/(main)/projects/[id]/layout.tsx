@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 
 import { ReactNode } from "react";
 import { NextPage } from "next";
+import Link from "next/link";
 
 interface Props {
   params: { id: string };
@@ -17,7 +18,7 @@ interface Props {
 }
 
 const ProjectLayout: NextPage<Props> = ({ params: { id }, children }) => {
-  const { projectInfo }: Project = projects.filter(
+  const { projectInfo, discordLink, donationLink }: Project = projects.filter(
     (project) => project.id === id
   )[0];
 
@@ -32,16 +33,20 @@ const ProjectLayout: NextPage<Props> = ({ params: { id }, children }) => {
           {children}
         </div>
 
-        <div className="flex-[1] space-y-2 w-full h-full">
+        <div className="flex-[1] flex flex-col gap-y-2 w-full h-full">
           <ProjectInformation {...projectInfo} />
 
-          <Button className="font-bold text-base py-8 w-full rounded-none">
-            DISCORD
-          </Button>
+          <Link href={discordLink} target="_blank">
+            <Button className="font-bold text-base py-8 w-full rounded-none">
+              DISCORD
+            </Button>
+          </Link>
 
-          <Button className="font-bold text-base py-8 w-full rounded-none">
-            DONATION
-          </Button>
+          <Link href={donationLink} target="_blank">
+            <Button className="font-bold text-base py-8 w-full rounded-none">
+              DONATION
+            </Button>
+          </Link>
 
           <div className="w-full py-10 bg-slate-200 flex items-center justify-center">
             <p className="text-black font-medium text-2xl">ADVERTISEMENT</p>

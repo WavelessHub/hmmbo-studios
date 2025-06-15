@@ -51,6 +51,8 @@ export interface Project {
   id: string;
   title: string;
   price: number;
+  discordLink: string;
+  donationLink: string;
   description: string;
   image_url: string;
   category: string;
@@ -72,6 +74,8 @@ export const projects: Project[] = [
     image_url:
       "https://preview.redd.it/34lldll2xtt91.png?width=640&crop=smart&auto=webp&s=5d988fd1715ed0867010b0a0078eeadc9d89fdf0",
     category: "Web Development",
+    discordLink: "https://discord.com/invite/yourhandle",
+    donationLink: "https://buymeacoffee.com/yourhandle",
     updates: [
       {
         id: "UPD001",
