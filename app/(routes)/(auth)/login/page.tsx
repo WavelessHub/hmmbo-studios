@@ -5,6 +5,7 @@ import AuthForm from "@/app/components/auth/AuthForm";
 import { LoginSchemaType } from "@/schemas/auth";
 import { useLoginForm } from "@/hooks/useForm";
 
+import { Suspense } from "react";
 import { NextPage } from "next";
 
 const LoginPage: NextPage = ({}) => {
@@ -16,7 +17,11 @@ const LoginPage: NextPage = ({}) => {
     form.reset();
   };
 
-  return <AuthForm mode="login" form={form} onSubmit={onSubmit} />;
+  return (
+    <Suspense>
+      <AuthForm mode="login" form={form} onSubmit={onSubmit} />
+    </Suspense>
+  );
 };
 
 export default LoginPage;

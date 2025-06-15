@@ -4,15 +4,16 @@ import { Button } from "@/components/ui/button";
 
 import { useRouter } from "next/navigation";
 
-import { NextPage } from "next";
-
 import { Mail } from "lucide-react";
+
+import { Suspense } from "react";
+import { NextPage } from "next";
 
 const VerifyPage: NextPage = ({}) => {
   const { push } = useRouter();
 
   return (
-    <div>
+    <Suspense>
       <div className="text-center mb-6">
         <div className="w-16 h-16 bg-primary/90 rounded-full flex items-center justify-center mx-auto mb-4">
           <Mail className="w-8 h-8 text-white" />
@@ -39,7 +40,7 @@ const VerifyPage: NextPage = ({}) => {
           Back to Sign In
         </Button>
       </div>
-    </div>
+    </Suspense>
   );
 };
 
