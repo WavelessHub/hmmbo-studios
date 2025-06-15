@@ -2,7 +2,7 @@ import { features } from "@/constants/features";
 
 const Features = () => {
   return (
-    <div className="max-w-xl">
+    <div className="max-w-2xl">
       <p className="text-4xl font-bold mb-4 text-white">
         Premium Quality
         <br />
@@ -16,9 +16,9 @@ const Features = () => {
             className="bg-black/20 backdrop-blur-sm rounded-lg p-5 border border-primary/70/30"
           >
             <div className="flex items-center gap-x-3 mb-3">
-              <div className="w-10 h-10 bg-primary/90 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-primary/90 rounded-full flex items-center justify-center">
                 <span className="text-white text-xl font-bold">
-                  {feature.icon}
+                  <feature.icon fill="#f1f5f9" className="text-slate-100" />
                 </span>
               </div>
 

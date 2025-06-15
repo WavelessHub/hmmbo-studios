@@ -1,4 +1,4 @@
-import HelpForm from "@/app/components/HelpForm";
+import HelpForm from "@/app/components/help/HelpForm";
 import Footer from "@/app/components/Footer";
 
 import Link from "next/link";

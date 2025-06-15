@@ -1,10 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "preview.redd.it",
-      "via.placeholder.com",
-      "yt3.googleusercontent.com",
+    remotePatterns: [
+      {
+        hostname: "preview.redd.it",
+      },
+      {
+        hostname: "via.placeholder.com",
+      },
+      {
+        hostname: "yt3.googleusercontent.com",
+      },
+      {
+        hostname: "randomuser.me",
+      },
     ],
   },
 };

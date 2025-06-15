@@ -2,13 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 
-import { useRouter } from "next/navigation";
+import { usePath } from "@/hooks/usePath";
+
 import { NextPage } from "next";
 
 import { Mail } from "lucide-react";
 
 const VerifyPage: NextPage = ({}) => {
-  const router = useRouter();
+  const { router } = usePath();
 
   return (
     <div>

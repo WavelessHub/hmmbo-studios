@@ -1,5 +1,3 @@
-"use client";
-
 import AuthForm from "@/app/components/auth/AuthForm";
 
 import { RegisterSchemaType } from "@/schemas/auth";

@@ -4,6 +4,7 @@ import { z, ZodTypeAny } from "zod";
 
 import { loginSchema, registerSchema } from "@/schemas/auth";
 import { helpSchema } from "@/schemas/help";
+import { commentSchema } from "@/schemas/comment";
 
 export const useLoginForm = () =>
   useZodForm(loginSchema, { email: "", password: "" });
@@ -18,6 +19,8 @@ export const useHelpForm = () =>
     subject: "General Enquiry",
     message: "",
   });
+
+export const useCommentForm = () => useZodForm(commentSchema, { message: "" });
 
 const useZodForm = <TSchema extends ZodTypeAny>(
   schema: TSchema,

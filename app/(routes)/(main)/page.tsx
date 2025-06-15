@@ -1,12 +1,12 @@
 import Navbar from "@/app/components/Navbar";
-import Hero from "@/app/components/Hero";
-import PluginPreview from "@/app/components/PluginPreview";
+import Hero from "@/app/components/home/Hero";
+import PluginPreview from "@/app/components/home/PluginPreview";
 import Footer from "@/app/components/Footer";
-import Category from "@/app/components/Category";
-import Popularity from "@/app/components/Popularity";
-import Reviews from "@/app/components/Reviews";
-import Supporters from "@/app/components/Supporters";
-import ScrollUpButton from "@/app/components/ScrollUpButton";
+import Category from "@/app/components/home/Category";
+import Popularity from "@/app/components/home/Popularity";
+import Reviews from "@/app/components/home/Reviews";
+import Supporters from "@/app/components/home/Supporters";
+import ScrollUpButton from "@/app/components/home/ScrollUpButton";
 
 import { NextPage } from "next";
 

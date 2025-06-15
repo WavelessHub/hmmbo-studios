@@ -1,16 +1,15 @@
-"use client";
-
-import ProjectCard from "@/app/components/ProjectCard";
+import ProjectCard from "@/app/components/project/ProjectCard";
 
 import { projects } from "@/constants/projects";
 import { NextPage } from "next";
 
 import Link from "next/link";
-import { useParams } from "next/navigation";
 
-const Page: NextPage = ({}) => {
-  const { category }: { category: string } = useParams();
+interface Props {
+  params: { category: string };
+}
 
+const Page: NextPage<Props> = ({ params: { category } }) => {
   const filteredProjects = projects.filter(
     (project) => project.category.toLowerCase() === category
   );
