@@ -1,14 +1,10 @@
 import { type Comment } from "@/constants/projects";
 
-import { ThumbsDown, ThumbsUp } from "lucide-react";
-
-import { useState } from "react";
 import { NextPage } from "next";
 
 import Ratings from "./Ratings";
 
 import Image from "next/image";
-import Vote from "./Vote";
 
 const Comment: NextPage<Comment> = ({
   profileImage,
