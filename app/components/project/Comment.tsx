@@ -16,27 +16,6 @@ const Comment: NextPage<Comment> = ({
   comment,
   rating,
 }) => {
-  const [hasLiked, setHasLiked] = useState(false);
-  const [hasDisliked, setHasDisliked] = useState(false);
-
-  const handleLike = () => {
-    if (hasLiked) {
-      setHasLiked(false);
-    } else {
-      setHasLiked(true);
-      setHasDisliked(false); // remove dislike if present
-    }
-  };
-
-  const handleDislike = () => {
-    if (hasDisliked) {
-      setHasDisliked(false);
-    } else {
-      setHasDisliked(true);
-      setHasLiked(false); // remove like if present
-    }
-  };
-
   return (
     <div className="w-full flex gap-4 items-start">
       <Image
@@ -47,31 +26,14 @@ const Comment: NextPage<Comment> = ({
         className="w-12 h-12 rounded-full bg-cover bg-center"
       />
 
-      <div className="bg-zinc-900 p-4 px-5 flex flex-col gap-y-1 rounded-lg w-full">
+      <div className="bg-zinc-900 p-3.5 px-5 flex flex-col gap-y-1 rounded-lg w-full">
         <div className="w-full flex items-center justify-between">
-          <p className="text-lg font-bold text-white">{username}</p>
+          <div className="space-y-1">
+            <p className="text-lg font-bold text-white">{username}</p>
+            <p className="text-gray-400 font-medium text-sm">{comment}</p>
+          </div>
 
           <Ratings rating={rating} />
-        </div>
-
-        <div className="w-full flex items-center justify-between">
-          <p className="text-gray-400 font-medium text-sm">{comment}</p>
-
-          <div className="flex items-center gap-x-2">
-            <Vote
-              isActive={hasLiked}
-              onClick={handleLike}
-              color="green"
-              Icon={ThumbsUp}
-            />
-
-            <Vote
-              isActive={hasDisliked}
-              onClick={handleDislike}
-              color="red"
-              Icon={ThumbsDown}
-            />
-          </div>
         </div>
       </div>
     </div>

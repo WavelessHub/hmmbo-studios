@@ -22,7 +22,7 @@ const ProjectLayout: NextPage<Props> = ({ params: { id }, children }) => {
   )[0];
 
   return (
-    <div className="mt-32 w-full h-full max-w-[100rem]">
+    <div className="mt-32 w-full h-full px-20">
       <ProjectInfo id={id} />
 
       <div className="flex items-start gap-x-2">
