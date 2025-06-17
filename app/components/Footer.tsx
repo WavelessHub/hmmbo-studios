@@ -1,83 +1,185 @@
-import { NextPage } from "next";
+"use client";
 
-import Link from "next/link";
+import { motion } from "framer-motion";
 
-const Footer: NextPage = () => {
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+
+import {
+  Github,
+  Twitter,
+  Twitch,
+  Mail,
+  Heart,
+  Download,
+  Shield,
+  Zap,
+  Users,
+} from "lucide-react";
+
+import { footerLinks } from "@/constants/footer";
+
+const Footer = () => {
   return (
-    <div className="w-full bg-transparent text-center text-zinc-300 py-10">
-      <div className="w-full h-[1.5px] bg-zinc-400 mb-10" />
-
-      <div className="text-sm">
-        Copyright © 2025 Hmmbo Studios &#8208; All rights reserved
-        <br />
-        Hmmbo Studios is not affiliated with Minecraft or Mojang AB
-      </div>
-
-      <div className="flex justify-center gap-6 mt-4 text-base font-medium">
-        <Link href="/terms" className="hover:underline">
-          Terms
-        </Link>
-
-        <Link href="/privacy" className="hover:underline">
-          Privacy
-        </Link>
-
-        <Link href="/support" className="hover:underline">
-          Support
-        </Link>
-
-        <Link href="/about" className="hover:underline">
-          About
-        </Link>
-      </div>
-
-      <div className="flex justify-center gap-6 mt-4 text-zinc-300">
-        {/* Discord */}
-        <Link
-          href="https://discord.gg/yourserver"
-          target="_blank"
-          rel="noopener noreferrer"
+    <footer className="bg-zinc-900/50 text-white overflow-hidden">
+      <div className="container mx-auto px-4 relative">
+        {/* Newsletter Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="py-16 border-b border-gray-800"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-7 h-7 fill-[#d4d4d8]"
-            viewBox="0 0 50 50"
-          >
-            <path d="M42.298,11.65c-0.676-1.021-1.633-1.802-2.768-2.256c-2.464-0.988-4.583-1.648-6.479-2.02	C31.721,7.114,30.404,7.768,29.771,9l-0.158,0.308c-1.404-0.155-2.895-0.207-4.593-0.164c-1.741-0.042-3.237,0.009-4.643,0.164	L20.22,9c-0.633-1.232-1.952-1.885-3.279-1.625c-1.896,0.371-4.016,1.031-6.479,2.02c-1.134,0.454-2.091,1.234-2.768,2.256	c-4.721,7.131-6.571,14.823-5.655,23.517c0.032,0.305,0.202,0.578,0.461,0.741c3.632,2.29,6.775,3.858,9.891,4.936	c1.303,0.455,2.748-0.054,3.517-1.229l1.371-2.101c-1.092-0.412-2.158-0.9-3.18-1.483c-0.479-0.273-0.646-0.884-0.373-1.363	c0.273-0.481,0.884-0.65,1.364-0.373c3.041,1.734,6.479,2.651,9.942,2.651s6.901-0.917,9.942-2.651	c0.479-0.277,1.09-0.108,1.364,0.373c0.273,0.479,0.106,1.09-0.373,1.363c-1.056,0.603-2.16,1.105-3.291,1.524l1.411,2.102	c0.581,0.865,1.54,1.357,2.528,1.357c0.322,0,0.647-0.053,0.963-0.161c3.125-1.079,6.274-2.649,9.914-4.944	c0.259-0.163,0.429-0.437,0.461-0.741C48.869,26.474,47.019,18.781,42.298,11.65z M18.608,28.983c-1.926,0-3.511-2.029-3.511-4.495	c0-2.466,1.585-4.495,3.511-4.495s3.511,2.029,3.511,4.495C22.119,26.954,20.534,28.983,18.608,28.983z M31.601,28.957	c-1.908,0-3.478-2.041-3.478-4.522s1.57-4.522,3.478-4.522c1.908,0,3.478,2.041,3.478,4.522S33.509,28.957,31.601,28.957z"></path>
-          </svg>
-        </Link>
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+              Stay Updated with HMMBO Studios
+            </h3>
+            <p className="text-gray-300 mb-8 text-lg">
+              Get notified about new plugin releases, updates, and exclusive
+              offers
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <Input
+                placeholder="Enter your email..."
+                className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-400"
+              />
+              <Button className="minecraft-shadow pulse-glow">Subscribe</Button>
+            </div>
+          </div>
+        </motion.div>
 
-        {/* X */}
-        <Link
-          href="https://twitter.com/yourhandle"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 30 30"
-            className="w-7 h-7 fill-[#d4d4d8]"
-          >
-            <path d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z"></path>
-          </svg>
-        </Link>
+        {/* Main Footer Content */}
+        <div className="py-16">
+          <div className="grid lg:grid-cols-6 gap-12">
+            {/* Brand Section */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-2"
+            >
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-lg flex items-center justify-center minecraft-shadow">
+                  <span className="text-white font-bold text-xl pixelated">
+                    H
+                  </span>
+                </div>
+                <div>
+                  <span className="text-2xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                    HMMBO STUDIOS
+                  </span>
+                  <p className="text-gray-400 text-sm">
+                    Premium Minecraft Plugins
+                  </p>
+                </div>
+              </div>
 
-        {/* Instagram */}
-        <Link
-          href="https://instagram.com/yourhandle"
-          target="_blank"
-          rel="noopener noreferrer"
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Creating exceptional Minecraft plugins that enhance gameplay and
+                bring communities together. Trusted by thousands of servers
+                worldwide.
+              </p>
+
+              {/* Trust Badges */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                <Badge className="bg-green-600 text-white">
+                  <Shield className="w-3 h-3 mr-1" />
+                  Secure
+                </Badge>
+                <Badge className="bg-blue-600 text-white">
+                  <Zap className="w-3 h-3 mr-1" />
+                  Fast
+                </Badge>
+                <Badge className="bg-purple-600 text-white">
+                  <Users className="w-3 h-3 mr-1" />
+                  10K+ Users
+                </Badge>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex space-x-4">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-gray-400 hover:text-white hover:bg-gray-800"
+                >
+                  <Twitch className="w-5 h-5" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-gray-400 hover:text-white hover:bg-gray-800"
+                >
+                  <Twitter className="w-5 h-5" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-gray-400 hover:text-white hover:bg-gray-800"
+                >
+                  <Github className="w-5 h-5" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-gray-400 hover:text-white hover:bg-gray-800"
+                >
+                  <Mail className="w-5 h-5" />
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Footer Links */}
+            {Object.entries(footerLinks).map(([category, links], index) => (
+              <motion.div
+                key={category}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <h4 className="font-bold text-lg mb-4 text-white">
+                  {category}
+                </h4>
+                <ul className="space-y-2">
+                  {links.map((link) => (
+                    <li key={link}>
+                      <button className="text-gray-400 hover:text-white transition-colors text-left">
+                        {link}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="py-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 48 48"
-            className="w-7 h-7 fill-[#d4d4d8]"
-          >
-            <path d="M 16.5 5 C 10.16639 5 5 10.16639 5 16.5 L 5 31.5 C 5 37.832757 10.166209 43 16.5 43 L 31.5 43 C 37.832938 43 43 37.832938 43 31.5 L 43 16.5 C 43 10.166209 37.832757 5 31.5 5 L 16.5 5 z M 16.5 8 L 31.5 8 C 36.211243 8 40 11.787791 40 16.5 L 40 31.5 C 40 36.211062 36.211062 40 31.5 40 L 16.5 40 C 11.787791 40 8 36.211243 8 31.5 L 8 16.5 C 8 11.78761 11.78761 8 16.5 8 z M 34 12 C 32.895 12 32 12.895 32 14 C 32 15.105 32.895 16 34 16 C 35.105 16 36 15.105 36 14 C 36 12.895 35.105 12 34 12 z M 24 14 C 18.495178 14 14 18.495178 14 24 C 14 29.504822 18.495178 34 24 34 C 29.504822 34 34 29.504822 34 24 C 34 18.495178 29.504822 14 24 14 z M 24 17 C 27.883178 17 31 20.116822 31 24 C 31 27.883178 27.883178 31 24 31 C 20.116822 31 17 27.883178 17 24 C 17 20.116822 20.116822 17 24 17 z"></path>
-          </svg>
-        </Link>
+          <div className="flex items-center space-x-2 text-gray-400 mb-4 md:mb-0">
+            <span>© 2024 HMMBO Studios. Made with</span>
+            <Heart className="w-4 h-4 text-red-500 fill-current" />
+            <span>for the Minecraft community</span>
+          </div>
+
+          <div className="flex items-center space-x-4 text-gray-400">
+            <div className="flex items-center space-x-1">
+              <Download className="w-4 h-4" />
+              <span className="text-sm">50K+ Downloads</span>
+            </div>
+            <div className="w-1 h-1 bg-gray-600 rounded-full"></div>
+            <span className="text-sm">Version 2024.1</span>
+          </div>
+        </motion.div>
       </div>
-    </div>
+    </footer>
   );
 };
 

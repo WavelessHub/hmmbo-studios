@@ -57,7 +57,7 @@ const PluginPreview: NextPage = ({}) => {
 
       <div className="relative">
         {/* Background section */}
-        <div className="bg-[#1A1919] h-[30rem]"></div>
+        <div className="bg-zinc-900/50 h-[30rem]"></div>
 
         {/* Carousel overlayed on top */}
         <div className="absolute top-24 left-0 w-full h-full flex items-center justify-center">

@@ -24,7 +24,7 @@ const Popularity: NextPage = ({}) => {
         </div>
       </div>
 
-      <div className="bg-[#1A1919] w-full h-[28rem]" />
+      <div className="bg-zinc-900/50 w-full h-[28rem]" />
     </div>
   );
 };
