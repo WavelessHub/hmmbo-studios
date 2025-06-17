@@ -1,10 +1,9 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { recentPosts } from "@/constants/blog";
 import { NextPage } from "next";
+import Image from "next/image";
 
-interface Props {}
-
-const RecentTags: NextPage<Props> = ({}) => {
+const RecentPosts: NextPage = ({}) => {
   return (
     <Card className="minecraft-shadow text-gray-300 border-zinc-700 border-2">
       <CardHeader>
@@ -16,7 +15,9 @@ const RecentTags: NextPage<Props> = ({}) => {
             key={post.id}
             className="flex items-center gap-x-4 group cursor-pointer"
           >
-            <img
+            <Image
+              width={64}
+              height={64}
               alt={post.title}
               className="w-16 h-16 object-cover rounded-full pixelated"
               src="https://cdn.modrinth.com/data/gK9mebQg/28b537b7a5d104cbbce3b3366e39593164fd1f2c_96.webp"
@@ -36,4 +37,4 @@ const RecentTags: NextPage<Props> = ({}) => {
   );
 };
 
-export default RecentTags;
+export default RecentPosts;

@@ -1,9 +1,7 @@
 import { NotebookText } from "lucide-react";
 import { NextPage } from "next";
 
-interface Props {}
-
-const BlogTitle: NextPage<Props> = ({}) => {
+const BlogTitle: NextPage = ({}) => {
   return (
     <div className="text-center mb-16 pt-8">
       <div className="inline-block p-4 bg-primary/10 rounded-full mb-4">

@@ -3,9 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { popularTags } from "@/constants/blog";
 import { NextPage } from "next";
 
-interface Props {}
-
-const PopularTags: NextPage<Props> = ({}) => {
+const PopularTags: NextPage = ({}) => {
   return (
     <Card className="minecraft-shadow text-gray-300 border-zinc-700 border-2">
       <CardHeader>

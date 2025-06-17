@@ -1,7 +1,7 @@
 import BlogPosts from "@/app/components/blog/BlogPosts";
 import Newsletter from "@/app/components/blog/Newsletter";
 import PopularTags from "@/app/components/blog/PopularTags";
-import RecentTags from "@/app/components/blog/RecentTags";
+import RecentPosts from "@/app/components/blog/RecentPosts";
 import Search from "@/app/components/blog/Search";
 import BlogTitle from "@/app/components/blog/BlogTitle";
 import Footer from "@/app/components/Footer";
@@ -26,7 +26,7 @@ const BlogPage: NextPage = ({}) => {
               <Search />
 
               {/* Recent Posts */}
-              <RecentTags />
+              <RecentPosts />
 
               {/* Popular Tags */}
               <PopularTags />

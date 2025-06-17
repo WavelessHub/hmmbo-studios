@@ -3,9 +3,7 @@ import { Input } from "@/components/ui/input";
 import { SearchIcon } from "lucide-react";
 import { NextPage } from "next";
 
-interface Props {}
-
-const Search: NextPage<Props> = ({}) => {
+const Search: NextPage = ({}) => {
   return (
     <Card className="minecraft-shadow text-gray-300 border-zinc-700 border-2">
       <CardHeader>

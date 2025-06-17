@@ -9,9 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { NextPage } from "next";
 
-interface Props {}
-
-const Newsletter: NextPage<Props> = ({}) => {
+const Newsletter: NextPage = ({}) => {
   return (
     <Card className="minecraft-shadow border-none bg-gradient-to-br from-green-500 to-blue-500 text-white">
       <CardHeader>

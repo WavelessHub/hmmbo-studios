@@ -14,10 +14,9 @@ import { posts, itemVariants } from "@/constants/blog";
 import { User, Calendar, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { NextPage } from "next";
+import Image from "next/image";
 
-interface Props {}
-
-const BlogPosts: NextPage<Props> = ({}) => {
+const BlogPosts: NextPage = ({}) => {
   return (
     <div className="lg:col-span-2 space-y-8">
       {posts.map((post) => (
@@ -30,7 +29,9 @@ const BlogPosts: NextPage<Props> = ({}) => {
           <Card className="overflow-hidden font-medium text-gray-300 minecraft-shadow hover:shadow-2xl transition-all duration-300 border-2 border-zinc-700 hover:border-primary">
             <div className="md:flex">
               <div className="md:w-1/3">
-                <img
+                <Image
+                  width={100}
+                  height={100}
                   alt={post.title}
                   className="w-full h-48 md:h-full object-cover"
                   src={post.image}
