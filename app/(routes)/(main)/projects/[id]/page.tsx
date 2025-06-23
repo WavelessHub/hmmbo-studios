@@ -18,13 +18,13 @@ interface Props {
 const ProjectPage: NextPage<Props> = ({ params: { id } }) => {
   const params = useSearchParams();
 
-  const { comments, versions, updates }: Project = projects.filter(
+  const { comments, versions, updates, description }: Project = projects.filter(
     (project) => project.id === id
   )[0];
 
   switch (params.get("tab")) {
     case "overview":
-      return <Overview id={id} comments={comments} />;
+      return <Overview id={id} comments={comments} description={description}  />;
 
     case "wiki":
       return redirect("https://wiki.hmmbo.com");

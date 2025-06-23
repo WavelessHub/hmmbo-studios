@@ -34,7 +34,7 @@ const ProjectInfo: NextPage<Props> = ({ id }) => {
         <div>
           <p className="font-bold text-5xl mb-2">{project.title}</p>
           <p className="font-medium text-base text-gray-400">
-            {project.description}
+            {project.slogan}
           </p>
         </div>
       </div>

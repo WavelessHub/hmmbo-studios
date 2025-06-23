@@ -14,6 +14,12 @@ const nextConfig = {
       {
         hostname: "randomuser.me",
       },
+      {
+        hostname: "example.com",
+      },
+      {
+        hostname: "cdn.modrinth.com",
+      },
     ],
   },
 };

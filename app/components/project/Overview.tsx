@@ -4,17 +4,20 @@ import CommentForm from "./CommentForm";
 import Comment from "./Comment";
 
 import { NextPage } from "next";
+import BBCodeEditor from "./BBCodeEditor";
 
 interface Props {
   id: Project["id"];
   comments: Project["comments"];
+  description: Project["description"];
 }
 
-const Overview: NextPage<Props> = ({ id, comments }) => {
+const Overview: NextPage<Props> = ({ id, comments, description }) => {
   return (
     <>
-      <div className="w-full h-full aspect-video bg-slate-200 flex items-center justify-center">
-        <p className="text-7xl font-bold text-black">BB CODE</p>
+      <div className="w-full h-full bg-slate-50 p-4 text-black">
+        {/* <p className="text-7xl font-bold text-black">BB CODE</p> */}
+        <BBCodeEditor bbcode={description}/>
       </div>
 
       <div className="flex flex-col gap-y-6 w-full mt-6">
