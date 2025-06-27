@@ -6,25 +6,48 @@ import DisplayCard from "./DisplayCard";
 
 import { NextPage } from "next";
 
-const Popularity: NextPage = ({}) => {
-  return (
-    <div className="relative mt-96">
-      {/* Background section */}
-      <div className="absolute left-0 top-[-15em]  w-full h-full flex items-center justify-center ">
-        <div>
-          <p className="text-5xl mt-20 mb-24 font-semibold text-center text-secondary-gradient">
-            Popular
-          </p>
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 
-          <div className="w-full flex items-center gap-x-10 max-w-7xl">
+
+const Popularity: NextPage = ({}) => {
+
+    const [sliderRef] = useKeenSlider({
+      loop: true,
+      mode: "free-snap",
+      slides: {
+        perView: 3,
+        spacing: 15,
+  
+      },
+      
+    });
+
+  return (
+    <div className="relative mt-96 pt-20 ">
+      {/* Background section */}
+      <div className="absolute left-0 top-[-15em] w-full h-full flex items-center justify-center ">
+        <div>
+          <p className="text-5xl mt-20  h-20 font-semibold text-center text-secondary-gradient">
+          Hot Right Now  
+          </p>
+      <div className="w-[80vw]">
+          <div
+        ref={sliderRef}
+        className="keen-slider "
+        
+      >
             {popularities.map((plugin, index) => (
-              <DisplayCard key={index} {...plugin} popularTab />
+               <div className="keen-slider__slide" key={index}>
+              <DisplayCard  {...plugin} popularTab />
+              </div>
+
             ))}
           </div>
         </div>
       </div>
-
-      <div className="bg-zinc-900/50 w-full h-[28rem]" />
+      </div>
+      <div className="bg-[#1A1919] w-full h-[24rem]" />
     </div>
   );
 };

@@ -9,6 +9,8 @@ import Image from "next/image";
 
 import { NextPage } from "next";
 
+const animation = { duration: 50000, easing: (t: number) => t }
+
 const Reviews: NextPage = ({}) => {
   const [sliderRef] = useKeenSlider({
     mode: "free-snap",
@@ -17,6 +19,18 @@ const Reviews: NextPage = ({}) => {
       perView: 5,
       spacing: 20,
     },
+    drag: false,
+    created(s) {
+      s.moveToIdx(5, true, animation)
+    },
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation)
+    },
+    animationEnded(s) {
+      s.moveToIdx(0, true, {duration:1})
+      s.moveToIdx(5, true, animation)
+    },
+    
   });
 
   return (

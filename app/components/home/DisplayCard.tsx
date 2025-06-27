@@ -29,7 +29,7 @@ const DisplayCard: NextPage<Props> = ({
   badge,
 }) => {
   return (
-    <Card className="group relative w-[20rem] h-[30rem] py-0 rounded-lg overflow-hidden border border-white/10 bg-black shadow-md hover:shadow-2xl transition-shadow duration-300">
+    <Card className="group relative w-[23rem] h-[30rem]  py-0 rounded-lg overflow-hidden border border-white/10 bg-black shadow-md hover:shadow-2xl transition-shadow duration-300">
       <CardContent className="flex flex-col justify-between h-full p-0">
         {/* Image container with overflow-hidden */}
         <div className="relative w-full h-2/3 overflow-hidden">
@@ -43,7 +43,7 @@ const DisplayCard: NextPage<Props> = ({
 
           {badge && (
             <div className="absolute top-0 left-0">
-              <p className="font-semibold text-white text-xs px-4 py-1.5 rounded-l-md -1.5 translate-y-1/2 -rotate-90 bg-red-500 text-center">
+              <p className="font-semibold text-white text-xs px-6 rounded-br-sm translate-y-1/2 -rotate-90 bg-red-500 p-2 text-center rounded-lg">
                 {badge}
               </p>
             </div>
