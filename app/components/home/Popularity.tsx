@@ -13,22 +13,20 @@ const Popularity: NextPage = ({}) => {
   const [sliderRef] = useKeenSlider({
     loop: true,
     mode: "free-snap",
-    slides: {
-      perView: 3,
-      spacing: 15,
-    },
+    slides: { perView: 3 },
   });
 
   return (
-    <div className="relative mt-96 pt-20 ">
+    <div className="relative mt-96 pt-20">
       {/* Background section */}
       <div className="absolute left-0 top-[-15em] w-full h-full flex items-center justify-center ">
         <div>
-          <p className="text-5xl my-20 h-20 font-semibold text-center text-secondary-gradient">
+          <p className="text-5xl m-20 h-20 font-semibold text-center text-secondary-gradient">
             Hot Right Now
           </p>
-          <div className="w-[80vw]">
-            <div ref={sliderRef} className="keen-slider ">
+
+          <div>
+            <div ref={sliderRef} className="keen-slider gap-x-4">
               {popularities.map((plugin, index) => (
                 <div className="keen-slider__slide" key={index}>
                   <DisplayCard {...plugin} popularTab />

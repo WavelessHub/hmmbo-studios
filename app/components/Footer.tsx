@@ -18,21 +18,19 @@ import { footerLinks } from "@/constants/footer";
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-900/40 mt-8 text-white overflow-hidden">
+    <footer className="bg-zinc-900/40 text-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-4">
         <div className="py-12 grid lg:grid-cols-6 gap-12">
- 
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            
-
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Creating exceptional Minecraft plugins that enhance gameplay and bring
-              communities together. Trusted by thousands of servers worldwide.
+              Creating exceptional Minecraft plugins that enhance gameplay and
+              bring communities together. Trusted by thousands of servers
+              worldwide.
             </p>
 
             <div className="flex flex-wrap gap-2 mb-6">
@@ -66,7 +64,6 @@ const Footer = () => {
             </div>
           </motion.div>
 
-        
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +89,6 @@ const Footer = () => {
           </motion.div>
         </div>
 
-       
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

@@ -9,19 +9,16 @@ const Featured = () => {
   const [sliderRef] = useKeenSlider({
     loop: true,
     mode: "free-snap",
-    slides: {
-      perView: 3,
-      spacing: 15,
-    },
+    slides: { perView: 3 },
   });
 
   return (
-    <div className="w-[80vw]">
+    <div>
       <p className="text-5xl my-20 font-semibold text-center text-secondary-gradient">
         Our Best Picks
       </p>
 
-      <div ref={sliderRef} className="keen-slider ">
+      <div ref={sliderRef} className="keen-slider gap-x-4">
         {plugins.map((plugin, index) => (
           <div className="keen-slider__slide" key={index}>
             <FeaturedCard {...plugin} />

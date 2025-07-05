@@ -7,6 +7,7 @@ const MainLayout: NextPage<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <Navbar />
+
       {children}
     </>
   );

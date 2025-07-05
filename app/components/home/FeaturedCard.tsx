@@ -1,11 +1,9 @@
-'use client';
+"use client";
 
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { NextPage } from "next";
 import { ItemData } from "@/constants/plugins";
-
-
 
 const FeaturedCard: NextPage<ItemData> = ({
   bgImage,
@@ -47,12 +45,14 @@ const FeaturedCard: NextPage<ItemData> = ({
                 €{originalPrice.toFixed(2)}
               </div>
             )}
-            <div className="text-2xl font-bold text-white">€{price.toFixed(2)}</div>
+            <div className="text-2xl font-bold text-white">
+              €{price.toFixed(2)}
+            </div>
           </div>
 
           <button
             onClick={onBuy}
-            className="bg-primary hover:bg-primary/70 text-black rounded-full p-2 transition"
+            className="bg-primary hover:bg-primary/70 rounded-full p-2 transition"
           >
             <ArrowRight size={18} />
           </button>

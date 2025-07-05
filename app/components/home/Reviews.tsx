@@ -9,7 +9,7 @@ import Image from "next/image";
 
 import { NextPage } from "next";
 
-const animation = { duration: 50000, easing: (t: number) => t }
+const animation = { duration: 50000, easing: (t: number) => t };
 
 const Reviews: NextPage = ({}) => {
   const [sliderRef] = useKeenSlider({
@@ -21,22 +21,21 @@ const Reviews: NextPage = ({}) => {
     },
     drag: false,
     created(s) {
-      s.moveToIdx(5, true, animation)
+      s.moveToIdx(5, true, animation);
     },
     updated(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation)
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
     animationEnded(s) {
-      s.moveToIdx(0, true, {duration:1})
-      s.moveToIdx(5, true, animation)
+      s.moveToIdx(0, true, { duration: 1 });
+      s.moveToIdx(5, true, animation);
     },
-    
   });
 
   return (
     <div className="w-full flex flex-col">
       {/* Heading */}
-      <div className="mt-28 m-20 text-center">
+      <div className="m-20 text-center">
         <p className="font-bold text-4xl md:text-5xl text-secondary-gradient">
           Real Feedback From Real Users
         </p>

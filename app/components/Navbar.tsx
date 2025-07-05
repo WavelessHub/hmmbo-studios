@@ -14,6 +14,7 @@ import {
 } from "react";
 import { navbarItems, type NavbarItem } from "@/constants/navbar";
 import { usePathname } from "next/navigation";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Navbar: NextPage = ({}) => {
   return (
@@ -21,7 +22,15 @@ const Navbar: NextPage = ({}) => {
       <NavBody>
         <NavbarLogo />
         <NavbarItems items={navbarItems} />
-        <NavbarButton href="/login">Sign In</NavbarButton>
+
+        {/* <NavbarButton href="/login">Sign In</NavbarButton> */}
+
+        <Link href="/profile">
+          <Avatar className="cursor-pointer">
+            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+        </Link>
       </NavBody>
     </NavbarLayout>
   );
@@ -69,7 +78,7 @@ const NavBody = ({ children, className }: NavbarBodyProps) => {
   return (
     <div
       className={cn(
-        "relative mx-auto hidden w-full max-w-7xl items-center justify-between p-4 lg:flex",
+        "relative mx-auto hidden w-full max-w-7xl items-center justify-between p-6 lg:flex",
         className
       )}
     >
