@@ -5,38 +5,27 @@ import { NextPage } from "next";
 import Link from "next/link";
 
 import { navbarItems, type NavbarItem } from "@/constants/navbar";
-import { usePathname } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { NavbarItems, NavbarLayout } from "./navbar/NavbarUtils";
+import { NavbarItems, NavbarLayout, NavbarUser } from "./navbar/NavbarUtils";
 
 import { cookies } from "next/headers";
 
 const Navbar: NextPage = ({}) => {
 
-  const cookieStore = cookies();
-  const token = cookieStore.get("token"); 
-  const isAuthenticated = !!token;
+  // const cookieStore = cookies();
+  // const token = cookieStore.get("token"); 
+  // const isAuthenticated = !!token;
+  // console.log("🔐 Server-side token:", token?.value);
+
+  
 
   return (
     <NavbarLayout>
       <NavBody>
         <NavbarLogo />
         <NavbarItems items={navbarItems} />
+        <NavbarUser />
 
-        {isAuthenticated ? (
-            <Link href="/profile">
-            <Avatar className="cursor-pointer">
-              <AvatarImage
-                src="https://github.com/shadcn.png"
-                alt="@shadcn"
-              />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-          </Link>
-        
-        ) : (
-          <NavbarButton href="/login">Sign In</NavbarButton>
-        )}
       </NavBody>
     </NavbarLayout>
   );
@@ -74,7 +63,7 @@ interface NavbarButtonProps {
   className?: string;
 }
 
-const NavbarButton = ({ href, children, className }: NavbarButtonProps) => (
+export const NavbarButton = ({ href, children, className }: NavbarButtonProps) => (
   <Link
     href={href}
     className={cn(

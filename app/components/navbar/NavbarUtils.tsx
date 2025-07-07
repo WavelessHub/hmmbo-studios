@@ -7,6 +7,7 @@ import {
     ReactElement,
     useRef,
     useState,
+    useEffect
   } from "react";
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
@@ -17,6 +18,7 @@ import { cn } from "@/lib/utils";
 import { navbarItems, type NavbarItem } from "@/constants/navbar";
 import { usePathname } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { NavbarButton } from "../Navbar";
 
 interface NavbarLayoutProps {
     children: React.ReactNode;
@@ -89,4 +91,48 @@ interface NavbarLayoutProps {
     );
   };
 
-  
+  interface NavbarUserProps {
+  className?: string;
+}
+
+export const NavbarUser = ({ className }: NavbarUserProps) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [username, setUsername] = useState("CN");
+  const [imageUrl, setImageUrl] = useState("https://github.com/shadcn.png");
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const res = await fetch("/api/auth/me", {
+          credentials: "include",
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          setIsAuthenticated(true);
+          if (data.username) setUsername(data.username);
+          if (data.profilePicUrl) setImageUrl(data.profilePicUrl);
+        } else {
+          setIsAuthenticated(false);
+        }
+      } catch {
+        setIsAuthenticated(false);
+      }
+    };
+
+    checkAuth();
+  }, []);
+
+  if (isAuthenticated) {
+    return (
+      <Link href="/profile">
+        <Avatar className={`cursor-pointer ${className ?? ""}`}>
+          <AvatarImage src={imageUrl} alt={`@${username}`} />
+          <AvatarFallback>{username.slice(0, 2).toUpperCase()}</AvatarFallback>
+        </Avatar>
+      </Link>
+    );
+  }
+
+  return <NavbarButton href="/login">Sign In</NavbarButton>;
+};
