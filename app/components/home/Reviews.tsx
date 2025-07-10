@@ -16,8 +16,8 @@ const Reviews: NextPage = ({}) => {
     mode: "free-snap",
     slides: {
       origin: "center",
-      perView: 5,
-      spacing: 20,
+      perView: 4,
+      spacing: 10,
     },
     drag: false,
     created(s) {

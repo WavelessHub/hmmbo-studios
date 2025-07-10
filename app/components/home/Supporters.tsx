@@ -1,22 +1,19 @@
 import { supporters, type Supporter } from "@/constants/supporters";
-
 import { NextPage } from "next";
-
 import Image from "next/image";
 import Link from "next/link";
 
-const Supporters: NextPage = ({}) => {
+const Supporters: NextPage = () => {
   return (
-    <section className="p-4 m-20 flex flex-col items-center w-full select-none">
+    <section className="p-4 mb-20 mt-20 mx-auto max-w-screen-xl flex flex-col items-center w-full select-none">
       {/* Heading */}
-
       <p className="font-black pb-1.5 text-3xl md:text-5xl leading-[68px] text-secondary-gradient mb-20 text-center">
         Thanks for Sharing Our Work
       </p>
 
       {/* Supporters Grid */}
-      <div className="w-full md:px-80">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="w-full px-4 md:px-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
           {supporters.map((item, index) => (
             <ThanksCard key={index} {...item} />
           ))}
@@ -30,13 +27,15 @@ const ThanksCard = ({ title, description, imageUrl, url }: Supporter) => {
   return (
     <div className="flex flex-col items-center text-center">
       {/* Circular Image with Border */}
-      <Image
-        alt={title}
-        src={imageUrl}
-        width={128}
-        height={128}
-        className="w-32 h-32 object-cover rounded-full flex items-center justify-center border-4 border-primary overflow-hidden"
-      />
+      <div className="w-auto h-32 border-4 border-primary rounded-full overflow-hidden">
+        <Image
+          alt={title}
+          src={imageUrl}
+          width={128}
+          height={128}
+          className="object-cover w-full h-full"
+        />
+      </div>
 
       {/* Title */}
       <Link
