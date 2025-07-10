@@ -32,7 +32,7 @@ const LoginPage: NextPage = () => {
       console.log("Account Logged In:", result);
 
       form.reset();
-      router.push("/verify");
+      router.push("/");
     } catch (err) {
       console.error("Unexpected Error:", err);
     }
